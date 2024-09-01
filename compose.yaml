@@ -1,0 +1,9 @@
+services:
+  shell:
+    entrypoint:
+      - /bin/bash
+    image: ghcr.io/williamjacksn/hymns
+    init: true
+    volumes:
+      - ./:/home/python/hymns
+    working_dir: /home/python/hymns
