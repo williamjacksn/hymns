@@ -14,3 +14,5 @@ ENV PATH="/home/python/venv/bin:${PATH}" \
     TZ="Etc/UTC"
 
 LABEL org.opencontainers.image.source="https://github.com/williamjacksn/hymns"
+
+COPY --chown=python:python hymns.py /home/python/hymns/hymns.py
