@@ -10,6 +10,6 @@ Running `hymns.py` will perform the following actions:
 2.  Add hymn numbers to the first page of each hymn.
 3.  Arrange all hymns into a single PDF file.
 4.  Add blank pages if necessary to keep two-page hymns in a single spread.
-5.  Write the combined PDF file to `hymns.pdf` in the current directory.
+5.  Write the combined PDF file to `hymns.pdf` in the current directory. If `hymns.pdf` already exists, it will be overwritten.
 
-If `hymns.pdf` already exists, it will be overwritten.
+The resulting PDF is designed to be printed double-sided.
