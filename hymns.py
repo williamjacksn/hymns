@@ -100,7 +100,7 @@ for hymn in hymn_data:
     page.insert_text((x, y), str(hymn.get('number')), fontsize=18, fontname='Times-Roman')
     final.insert_pdf(doc)
     if hymn.get('blank_after'):
-        final.new_page()
+        final.new_page(width=page.rect.width, height=page.rect.height)
     doc.close()
 
 final.save('hymns.pdf')
