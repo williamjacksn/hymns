@@ -1,6 +1,8 @@
 import httpx
 import pymupdf
 
+revision = '2024.5.0'
+
 h = 'https://assets.churchofjesuschrist.org'
 
 hymn_data = [
