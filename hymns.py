@@ -5,6 +5,8 @@ revision = '2024.5.0'
 
 h = 'https://assets.churchofjesuschrist.org'
 
+cover = f'{h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg'
+
 hymn_data = [
     {
         'blank_after': False,
@@ -86,13 +88,28 @@ hymn_data = [
     }
 ]
 
+page_width = 495.0
+page_height = 711.0
+
 final = pymupdf.Document()
+
+# intro pages
+page = final.new_page(width=page_width, height=page_height)
+img_rect = (page_width * 0.1, page_width * 0.3, page_width * 0.9, (page_width * 0.9) + (page_width * 0.2))
+img_response = httpx.get(cover)
+page.insert_image(img_rect, stream=img_response.content)
+title_rect = (page_width * 0.1, page_width * 0.1, page_width * 0.9, page_width * 0.2)
+page.insert_textbox(title_rect, 'Hymns\x97For Home and Church', fontsize=28, fontname='times-roman',
+                    align=pymupdf.TEXT_ALIGN_CENTER)
+
+final.new_page(width=page_width, height=page_height)
 
 for hymn in hymn_data:
     url = hymn.get('pdf_url')
     response = httpx.get(url)
     doc = pymupdf.open(stream=response.content)
     page = doc[0]
+    last_page_rect = page.rect
     if hymn.get('number_loc') == 'l':
         x = 37
     else:
@@ -104,6 +121,16 @@ for hymn in hymn_data:
     if hymn.get('blank_after'):
         final.new_page(width=page.rect.width, height=page.rect.height)
     doc.close()
+
+page = final.new_page(width=page_width, height=page_height)
+rect = pymupdf.Rect(0, page.rect.height * 0.9, page.rect.width, page.rect.height)
+page.insert_textbox(rect, f'\nhttps://github.com/williamjacksn/hymns\nRevision {revision}', fontsize=8,
+                    fontname='times-roman', align=pymupdf.TEXT_ALIGN_CENTER)
+page.insert_link({
+    'kind': pymupdf.LINK_URI,
+    'from': rect,
+    'uri': 'https://github.com/williamjacksn/hymns',
+})
 
 final.save('hymns.pdf')
 final.close()
