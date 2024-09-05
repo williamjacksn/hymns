@@ -3,7 +3,7 @@ import io
 import pymupdf
 import qrcode
 
-revision = '2024.5.0'
+revision = '2024.5.1'
 src_repo = 'https://github.com/williamjacksn/hymns'
 hymns_homepage = 'https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church'
 
