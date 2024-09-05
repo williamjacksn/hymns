@@ -20,9 +20,9 @@ idna==3.8
     # via
     #   anyio
     #   httpx
-pymupdf==1.24.9
+pymupdf==1.24.10
     # via -r requirements.in
-pymupdfb==1.24.9
+pymupdfb==1.24.10
     # via pymupdf
 pypng==0.20220715.0
     # via qrcode
