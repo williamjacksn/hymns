@@ -1,5 +1,6 @@
 import httpx
 import io
+import pathlib
 import pymupdf
 import qrcode
 
@@ -8,7 +9,7 @@ src_repo = 'https://github.com/williamjacksn/hymns'
 hymns_homepage = 'https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church'
 
 h = 'https://assets.churchofjesuschrist.org'
-cover = f'{h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg'
+cover_url = f'{h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg'
 hymn_data = [
     {
         'number': 1001,
@@ -92,8 +93,12 @@ text = 'Hymns\x97For Home and Church'
 page.insert_textbox(title_rect, text, fontsize=30, fontname=font)
 
 img_rect = (page_width * 0.1, page_width * 0.2, page_width * 0.9, (page_width * 0.9) + (page_width * 0.1))
-img_response = httpx.get(cover)
-page.insert_image(img_rect, stream=img_response.content)
+cover = pathlib.Path() / '.local/cache/cover.jpg'
+if not cover.exists():
+    cover.parent.mkdir(parents=True, exist_ok=True)
+    img_response = httpx.get(cover_url)
+    cover.write_bytes(img_response.content)
+page.insert_image(img_rect, filename=cover.resolve())
 
 link_rect = pymupdf.Rect(page_width * 0.1, page_height * 0.8, page_width * 0.9, page_height * 0.9)
 text = f'Access these hymns digitally at\n{hymns_homepage}'
@@ -128,9 +133,13 @@ page.insert_image(qr_rect, stream=qr_stream)
 
 # hymn pages
 for hymn in hymn_data:
-    url = hymn.get('pdf_url')
-    response = httpx.get(url)
-    doc = pymupdf.Document(stream=response.content)
+    cache_target = pathlib.Path() / f'.local/cache/{hymn.get('number')}.pdf'
+    if not cache_target.exists():
+        url = hymn.get('pdf_url')
+        response = httpx.get(url)
+        cache_target.parent.mkdir(parents=True, exist_ok=True)
+        cache_target.write_bytes(response.content)
+    doc = pymupdf.Document(cache_target)
     page = doc[0]
     if hymn.get('number_loc') == 'l':
         x = 37
