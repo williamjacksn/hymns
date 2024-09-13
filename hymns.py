@@ -141,7 +141,7 @@ for hymn in hymn_data:
         cache_target.write_bytes(response.content)
     doc = pymupdf.Document(cache_target)
     page = doc[0]
-    if hymn.get('number_loc') == 'l':
+    if hymn.get('number_loc', 'l') == 'l':
         x = 37
     else:
         x = page.rect.width - 70
