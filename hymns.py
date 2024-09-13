@@ -135,6 +135,7 @@ img_rect = (page_width * 0.1, page_width * 0.2, page_width * 0.9, (page_width * 
 cover = pathlib.Path() / '.local/cache/cover.jpg'
 if not cover.exists():
     cover.parent.mkdir(parents=True, exist_ok=True)
+    print(f'Downloading {cover_url}')
     img_response = httpx.get(cover_url)
     cover.write_bytes(img_response.content)
 page.insert_image(img_rect, filename=cover.resolve())
@@ -175,6 +176,7 @@ for hymn in hymn_data:
     cache_target = pathlib.Path() / f'.local/cache/{hymn.get('number')}.pdf'
     if not cache_target.exists():
         url = hymn.get('pdf_url')
+        print(f'Downloading {url}')
         response = httpx.get(url)
         cache_target.parent.mkdir(parents=True, exist_ok=True)
         cache_target.write_bytes(response.content)
