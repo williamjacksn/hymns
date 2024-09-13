@@ -102,7 +102,7 @@ page.insert_image(img_rect, filename=cover.resolve())
 
 link_rect = pymupdf.Rect(page_width * 0.1, page_height * 0.8, page_width * 0.9, page_height * 0.9)
 text = f'Access these hymns digitally at\n{hymns_homepage}'
-page.insert_textbox(link_rect, text, fontsize=8, fontname=font, align=pymupdf.TEXT_ALIGN_CENTER)
+page.insert_textbox(link_rect, text, fontsize=10, fontname=font, align=pymupdf.TEXT_ALIGN_CENTER)
 page.insert_link({
     'kind': pymupdf.LINK_URI,
     'from': link_rect,
