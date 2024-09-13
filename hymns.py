@@ -4,7 +4,7 @@ import pathlib
 import pymupdf
 import qrcode
 
-revision = '2024.5.1'
+revision = '2024.9.1'
 src_repo = 'https://github.com/williamjacksn/hymns'
 hymns_homepage = 'https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church'
 
@@ -56,6 +56,45 @@ hymn_data = [
         'number': 1009,
         'number_loc': 'l',
         'pdf_url': f'{h}/6e/79/6e795f87ebb511eebd27eeeeac1ef760eeedab62/gethsemane.pdf'
+    },
+    {
+        'blank_after': True,
+        'number': 1010,
+        'pdf_url': f'{h}/oh/5v/oh5v0ejqfx70w7i6aq4bvhl1e9plpoyld9mk331x/amazing_grace.pdf'
+    },
+    {
+        'number': 1011,
+        'pdf_url': f'{h}/6f/37/6f37cd82ebb511eebbd6eeeeac1e993e0630c9ee/holding_hands_around_the_world.pdf'
+    },
+    {
+        'blank_after': True,
+        'number': 1012,
+        'pdf_url': f'{h}/kn/rv/knrvba9apal6ivg0fo1u332xpvv9jhvdl4lg7yik/anytime_anywhere.pdf'
+    },
+    {
+        'number': 1013,
+        'pdf_url': f'{h}/md/4f/md4f9a3ntjzegeiqu52w4x3g2yt733eydjv63ep5/gods_gracious_love.pdf'
+    },
+    {
+        'number': 1014,
+        'pdf_url': f'{h}/8d/vf/8dvfxy75bz6w764yerum41314ynuwg7dqn6wkxa0/my_shepherd_will_supply_my_need.pdf'
+    },
+    {
+        'blank_after': True,
+        'number': 1015,
+        'pdf_url': f'{h}/nk/kl/nkklkoxo47tg4g8ev5sifeha39r6eipa55evuupy/oh_the_deep_deep_love_of_jesus.pdf'
+    },
+    {
+        'number': 1016,
+        'pdf_url': f'{h}/ou/qn/ouqn58wbc3ieqcnvdi38gbym6co5tejigxinfaw2/behold_the_wounds_in_jesus_hands.pdf'
+    },
+    {
+        'number': 1017,
+        'pdf_url': f'{h}/z5/bf/z5bf1f2266jq08sp0l13nbbijbwl6kad9ze836sd/this_is_the_christ.pdf'
+    },
+    {
+        'number': 1018,
+        'pdf_url': f'{h}/ib/hy/ibhyon46m2ibnt1synq1yaeciqqft4ef1h17xb44/come_lord_jesus.pdf'
     },
     {
         'number': 1201,
