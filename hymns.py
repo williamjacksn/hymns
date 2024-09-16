@@ -18,57 +18,53 @@ hymn_data = [
     },
     {
         'number': 1002,
-        'number_loc': 'l',
         'pdf_url': f'{h}/70/a7/70a7ff54ebb511eeb4d5eeeeac1ea6754c802f3d/when_the_savior_comes_again.pdf',
     },
     {
         'number': 1003,
-        'number_loc': 'l',
         'pdf_url': f'{h}/6f/d3/6fd34a32ebb511eea3b1eeeeac1e2cdd0ffc6784/it_is_well_with_my_soul.pdf',
     },
     {
         'number': 1004,
-        'number_loc': 'l',
         'pdf_url': f'{h}/6f/cb/6fcb5af5ebb511ee903eeeeeac1e7de67f84090e/i_will_walk_with_jesus.pdf',
     },
     {
         'number': 1005,
-        'number_loc': 'l',
         'pdf_url': f'{h}/6f/00/6f001bb4ebb511eea424eeeeac1e211e768ee551/his_eye_is_on_the_sparrow.pdf',
     },
     {
         'number': 1006,
-        'number_loc': 'l',
         'pdf_url': f'{h}/70/39/703937f5ebb511ee888feeeeac1e36706b2e5f48/think_a_sacred_song.pdf',
     },
     {
+        'blank_after': True,
         'number': 1007,
         'number_loc': 'r',
         'pdf_url': f'{h}/6d/f3/6df3dbd5ebb511eea9a7eeeeac1eca3ca4ff6c01/as_bread_is_broken.pdf',
     },
     {
-        'blank_after': True,
         'number': 1008,
-        'number_loc': 'l',
+        'number_loc': 'r',
         'pdf_url': f'{h}/6e/06/6e062b55ebb511eeb343eeeeac1ef072e68df91f/bread_of_life_living_water.pdf',
     },
     {
+        'blank_after': True,
         'number': 1009,
-        'number_loc': 'l',
         'pdf_url': f'{h}/6e/79/6e795f87ebb511eebd27eeeeac1ef760eeedab62/gethsemane.pdf'
     },
     {
-        'blank_after': True,
         'number': 1010,
+        'number_loc': 'r',
         'pdf_url': f'{h}/oh/5v/oh5v0ejqfx70w7i6aq4bvhl1e9plpoyld9mk331x/amazing_grace.pdf'
     },
     {
+        'blank_after': True,
         'number': 1011,
         'pdf_url': f'{h}/6f/37/6f37cd82ebb511eebbd6eeeeac1e993e0630c9ee/holding_hands_around_the_world.pdf'
     },
     {
-        'blank_after': True,
         'number': 1012,
+        'number_loc': 'r',
         'pdf_url': f'{h}/kn/rv/knrvba9apal6ivg0fo1u332xpvv9jhvdl4lg7yik/anytime_anywhere.pdf'
     },
     {
@@ -76,12 +72,13 @@ hymn_data = [
         'pdf_url': f'{h}/md/4f/md4f9a3ntjzegeiqu52w4x3g2yt733eydjv63ep5/gods_gracious_love.pdf'
     },
     {
+        'blank_after': True,
         'number': 1014,
         'pdf_url': f'{h}/8d/vf/8dvfxy75bz6w764yerum41314ynuwg7dqn6wkxa0/my_shepherd_will_supply_my_need.pdf'
     },
     {
-        'blank_after': True,
         'number': 1015,
+        'number_loc': 'r',
         'pdf_url': f'{h}/nk/kl/nkklkoxo47tg4g8ev5sifeha39r6eipa55evuupy/oh_the_deep_deep_love_of_jesus.pdf'
     },
     {
@@ -98,7 +95,6 @@ hymn_data = [
     },
     {
         'number': 1201,
-        'number_loc': 'l',
         'pdf_url': f'{h}/6e/9f/6e9fac3debb511eea036eeeeac1ec84f90cdba38/hail_the_day_that_sees_him_rise.pdf'
     },
     {
@@ -108,12 +104,10 @@ hymn_data = [
     },
     {
         'number': 1203,
-        'number_loc': 'l',
         'pdf_url': f'{h}/70/73/707381d2ebb511eeb518eeeeac1e3b993d94e337/what_child_is_this.pdf'
     },
     {
         'number': 1204,
-        'number_loc': 'l',
         'pdf_url': f'{h}/6f/fb/6ffbe0d8ebb511eeb958eeeeac1e769f17b3574f/star_bright.pdf'
     }
 ]
