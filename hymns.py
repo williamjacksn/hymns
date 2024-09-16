@@ -4,7 +4,7 @@ import pathlib
 import pymupdf
 import qrcode
 
-revision = '2024.9.2'
+revision = '2024.9.3'
 src_repo = 'https://github.com/williamjacksn/hymns'
 hymns_homepage = 'https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church'
 
@@ -112,6 +112,14 @@ hymn_data = [
     }
 ]
 
+
+def get_qr(text: str):
+    qr = qrcode.make(text)
+    qr_stream = io.BytesIO()
+    qr.save(qr_stream)
+    return qr_stream
+
+
 font = 'times-roman'
 page_width = 495.0
 page_height = 711.0
@@ -135,7 +143,7 @@ if not cover.exists():
 page.insert_image(img_rect, filename=cover.resolve())
 
 link_rect = pymupdf.Rect(page_width * 0.1, page_height * 0.8, page_width * 0.9, page_height * 0.9)
-text = 'Scan this code to access these hymns digitally'
+text = '\nScan this code to access these hymns digitally'
 page.insert_textbox(link_rect, text, fontsize=10, fontname=font, align=pymupdf.TEXT_ALIGN_CENTER)
 page.insert_link({
     'kind': pymupdf.LINK_URI,
@@ -144,26 +152,18 @@ page.insert_link({
 })
 
 qr_rect = pymupdf.Rect(page_width * 0.45, page_height * 0.85, page_width * 0.55, (page_height * 0.85) + (page_width * 0.1))
-qr = qrcode.make(hymns_homepage)
-qr_stream = io.BytesIO()
-qr.save(qr_stream)
-page.insert_image(qr_rect, stream=qr_stream)
+page.insert_image(qr_rect, stream=get_qr(hymns_homepage))
 
 page = final.new_page(width=page_width, height=page_height)
-src_rect = pymupdf.Rect(0, page_height * 0.9, page_width, page_height)
-text = f'\n{src_repo}\nRevision {revision}'
-page.insert_textbox(src_rect, text, fontsize=8, fontname=font, align=pymupdf.TEXT_ALIGN_CENTER)
+text = f'\nRevision {revision}'
+page.insert_textbox(link_rect, text, fontsize=8, fontname=font, align=pymupdf.TEXT_ALIGN_CENTER)
 page.insert_link({
     'kind': pymupdf.LINK_URI,
-    'from': src_rect,
+    'from': link_rect,
     'uri': src_repo,
 })
 
-qr_rect = pymupdf.Rect(page_width * 0.45, page_height * 0.8, page_width * 0.55, (page_height * 0.8) + (page_width * 0.1))
-qr = qrcode.make(src_repo)
-qr_stream = io.BytesIO()
-qr.save(qr_stream)
-page.insert_image(qr_rect, stream=qr_stream)
+page.insert_image(qr_rect, stream=get_qr(src_repo))
 
 # hymn pages
 for hymn in hymn_data:
