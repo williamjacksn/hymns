@@ -1,3 +1,5 @@
+name: Generate PDF
+
 on:
   push:
     branches:
@@ -6,7 +8,7 @@ on:
 
 jobs:
   gen-pdf:
-    name: Generate pdf
+    name: Generate PDF
     runs-on: ubuntu-latest
     steps:
 
@@ -19,4 +21,5 @@ jobs:
       - run: python hymns.py
       - uses: actions/upload-artifact@v4
         with:
+          name: hymns.pdf
           path: hymns.pdf
