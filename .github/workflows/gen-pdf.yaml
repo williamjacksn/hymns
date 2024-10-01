@@ -1,6 +1,9 @@
 name: Generate PDF
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -12,18 +15,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure Actions cache for downloaded content
+        uses: actions/cache@v4
         with:
           key: download-cache
           path: .local
-      - uses: actions/setup-python@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
           cache: pip
-      - run: pip install -r requirements.txt
-      - run: python hymns.py
-      - uses: actions/upload-artifact@v4
+          python-version: '3.12'
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Generate PDF
+        run: python hymns.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         with:
           name: hymns.pdf
           path: hymns.pdf
