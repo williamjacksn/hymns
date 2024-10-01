@@ -2,7 +2,7 @@ import httpx
 import io
 import pathlib
 import pymupdf
-import qrcode
+import qrcode.image.pure
 
 revision = '2024.9.3'
 src_repo = 'https://github.com/williamjacksn/hymns'
@@ -114,7 +114,7 @@ hymn_data = [
 
 
 def get_qr(text: str):
-    qr = qrcode.make(text)
+    qr = qrcode.make(text, image_factory=qrcode.image.pure.PyPNGImage)
     qr_stream = io.BytesIO()
     qr.save(qr_stream)
     return qr_stream
