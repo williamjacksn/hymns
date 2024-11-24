@@ -131,7 +131,8 @@ page = final.new_page(width=page_width, height=page_height)
 
 title_rect = (page_width * 0.1, page_height * 0.05, page_width * 0.9, page_height * 0.15)
 text = 'Hymns\x97For Home and Church'
-page.insert_textbox(title_rect, text, fontsize=30, fontname=font)
+# left aligned due to the extra wide \x97 char which messes up center algo
+page.insert_textbox(title_rect, text, fontsize=31, fontname=font)
 
 img_rect = (page_width * 0.1, page_width * 0.2, page_width * 0.9, (page_width * 0.9) + (page_width * 0.1))
 cover = pathlib.Path() / '.local/cache/cover.jpg'
@@ -144,7 +145,7 @@ page.insert_image(img_rect, filename=cover.resolve())
 
 link_rect = pymupdf.Rect(page_width * 0.1, page_height * 0.8, page_width * 0.9, page_height * 0.9)
 text = '\nScan this code to access these hymns digitally'
-page.insert_textbox(link_rect, text, fontsize=10, fontname=font, align=pymupdf.TEXT_ALIGN_CENTER)
+page.insert_textbox(link_rect, text, fontsize=12, fontname=font, align=pymupdf.TEXT_ALIGN_CENTER)
 page.insert_link({
     'kind': pymupdf.LINK_URI,
     'from': link_rect,
