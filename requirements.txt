@@ -20,7 +20,7 @@ idna==3.10
     # via
     #   anyio
     #   httpx
-pymupdf==1.24.14
+pymupdf==1.25.0
     # via -r requirements.in
 pypng==0.20220715.0
     # via -r requirements.in
