@@ -4,7 +4,7 @@ import pathlib
 import pymupdf
 import qrcode.image.pure
 
-revision = '2024.9.3'
+revision = '2024.9.4'
 src_repo = 'https://github.com/williamjacksn/hymns'
 hymns_homepage = 'https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church'
 
