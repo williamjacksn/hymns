@@ -19,6 +19,7 @@ class Hymn:
 class DocData:
     hymns: list[Hymn]
     title: str = 'Hymns\x97For Home and Church'
+    title_font_size: int = 31
     hymn_link_text: str = '\nScan this code to access these hymns digitally'
     rev_text: str = 'Revision'
     lang: str = 'eng'
@@ -68,3 +69,13 @@ eng = DocData([
     Hymn(1205, '8z/nn/8znn69tb6fr1h2ctl0nkswt7ma8lc80jlklepyd6/let_easter_anthems_ring.pdf', False, True),
     Hymn(1206, '35/d0/35d0uc1i13madxx6wzlecpu3347lv09uebqrs75o/were_you_there.pdf'),
 ])
+
+
+spa = DocData(
+    [],
+    title='Himnos \x97 Para el hogar y la Iglesia',
+    title_font_size=27,
+    hymn_link_text='\nEscanee este código para acceder a estos himnos digitalmente',
+    rev_text='Revisión',
+    lang='spa'
+)

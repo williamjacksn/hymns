@@ -1,3 +1,4 @@
+import argparse
 import data
 import httpx
 import io
@@ -13,6 +14,12 @@ src_repo = 'https://github.com/williamjacksn/hymns'
 cover_url = f'{data.h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg'
 
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('lang', nargs='?', default='eng', choices=['eng', 'spa'])
+    return parser.parse_args()
+
+
 def get_qr(text: str):
     qr = qrcode.make(text, image_factory=qrcode.image.pure.PyPNGImage)
     qr_stream = io.BytesIO()
@@ -21,6 +28,11 @@ def get_qr(text: str):
 
 
 def main():
+    args = parse_args()
+    if args.lang == 'eng':
+        doc_data = data.eng
+    elif args.lang == 'spa':
+        doc_data = data.spa
     font = 'times-roman'
     # This is the page size used by Church PDFs
     page_width = 495.0  #  6.875"
@@ -33,7 +45,7 @@ def main():
 
     title_rect = (page_width * 0.1, page_height * 0.05, page_width * 0.9, page_height * 0.15)
     # left aligned due to the extra wide \x97 char which messes up center algo
-    pymupdf.utils.insert_textbox(page, title_rect, data.eng.title, fontname=font, fontsize=31)
+    pymupdf.utils.insert_textbox(page, title_rect, doc_data.title, fontname=font, fontsize=doc_data.title_font_size)
 
     img_rect = (page_width * 0.1, page_width * 0.2, page_width * 0.9, (page_width * 0.9) + (page_width * 0.1))
     cover = pathlib.Path() / '.local/cache/cover.jpg'
@@ -45,18 +57,18 @@ def main():
     pymupdf.utils.insert_image(page, img_rect, filename=cover.resolve())
 
     link_rect = pymupdf.Rect(page_width * 0.1, page_height * 0.8, page_width * 0.9, page_height * 0.9)
-    pymupdf.utils.insert_textbox(page, link_rect, data.eng.hymn_link_text, fontname=font, fontsize=12, align=pymupdf.TEXT_ALIGN_CENTER)
+    pymupdf.utils.insert_textbox(page, link_rect, doc_data.hymn_link_text, fontname=font, fontsize=12, align=pymupdf.TEXT_ALIGN_CENTER)
     pymupdf.utils.insert_link(page, {
         'from': link_rect,
         'kind': pymupdf.LINK_URI,
-        'uri': data.eng.hymns_homepage,
+        'uri': doc_data.hymns_homepage,
     })
 
     qr_rect = pymupdf.Rect(page_width * 0.45, page_height * 0.85, page_width * 0.55, (page_height * 0.85) + (page_width * 0.1))
-    pymupdf.utils.insert_image(page, qr_rect, stream=get_qr(data.eng.hymns_homepage))
+    pymupdf.utils.insert_image(page, qr_rect, stream=get_qr(doc_data.hymns_homepage))
 
     page = pymupdf.utils.new_page(final, width=page_width, height=page_height)
-    text = f'\n{data.eng.rev_text} {revision}'
+    text = f'\n{doc_data.rev_text} {revision}'
     pymupdf.utils.insert_textbox(page, link_rect, text, fontname=font, fontsize=8, align=pymupdf.TEXT_ALIGN_CENTER)
     pymupdf.utils.insert_link(page, {
         'from': link_rect,
@@ -67,8 +79,8 @@ def main():
     pymupdf.utils.insert_image(page, qr_rect, stream=get_qr(src_repo))
 
     # hymn pages
-    for hymn in data.eng.hymns:
-        cache_target = pathlib.Path() / f'.local/cache/{data.eng.lang}/{hymn.number}.pdf'
+    for hymn in doc_data.hymns:
+        cache_target = pathlib.Path() / f'.local/cache/{doc_data.lang}/{hymn.number}.pdf'
         if not cache_target.exists():
             url = hymn.pdf_url
             print(f'Downloading {url}')
@@ -97,9 +109,9 @@ def main():
         if pymupdf.utils.get_text(src_page):
             pymupdf.utils.show_pdf_page(dst_page, dst_page.rect, final, src_page.number)
 
-    resized_doc.save('hymns-letter.pdf')
+    resized_doc.save(f'hymns-{doc_data.lang}-letter.pdf')
     resized_doc.close()
-    final.save('hymns.pdf')
+    final.save(f'hymns-{doc_data.lang}.pdf')
     final.close()
 
 
