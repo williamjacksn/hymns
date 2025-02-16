@@ -42,5 +42,5 @@ jobs:
         with:
           name: hymns.pdf
           path: |
-            hymns.pdf
-            hymns-letter.pdf
+            hymns-eng.pdf
+            hymns-eng-letter.pdf
