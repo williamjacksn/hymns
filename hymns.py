@@ -29,9 +29,8 @@ def get_qr(text: str):
 
 def main():
     args = parse_args()
-    if args.lang == 'eng':
-        doc_data = data.eng
-    elif args.lang == 'spa':
+    doc_data = data.eng
+    if args.lang == 'spa':
         doc_data = data.spa
     font = 'times-roman'
     # This is the page size used by Church PDFs
