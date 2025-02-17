@@ -14,11 +14,11 @@ src_repo = 'https://github.com/williamjacksn/hymns'
 cover_url = f'{data.h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg'
 
 
-def parse_args():
+def arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument('-l', '--lang', default='eng', choices=['eng', 'spa'])
     parser.add_argument('-s', '--size', default='letter', choices=['a4', 'letter'])
-    return parser.parse_args()
+    return parser
 
 
 def get_qr(text: str):
@@ -106,5 +106,5 @@ def build_pdf(language: str, page_size: str):
 
 
 if __name__ == '__main__':
-    args = parse_args()
+    args = arg_parser().parse_args()
     build_pdf(args.lang, args.size)
