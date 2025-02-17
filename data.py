@@ -19,7 +19,7 @@ class Hymn:
 class DocData:
     hymns: list[Hymn]
     title: str = 'Hymns\x97For Home and Church'
-    title_font_size: int = 31
+    title_font_size: int = 38
     hymn_link_text: str = '\nScan this code to access these hymns digitally'
     rev_text: str = 'Revision'
     lang: str = 'eng'
