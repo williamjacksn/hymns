@@ -34,11 +34,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Generate PDFs
-        run: |
-          python hymns.py --lang eng --size a4
-          python hymns.py --lang eng --size letter
-          python hymns.py --lang spa --size a4
-          python hymns.py --lang spa --size letter
+        run: python gen-all.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

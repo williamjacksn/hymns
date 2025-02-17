@@ -28,14 +28,12 @@ def get_qr(text: str):
     return qr_stream
 
 
-def main():
-    args = parse_args()
+def build_pdf(language: str, page_size: str):
     doc_data = data.eng
-    if args.lang == 'spa':
+    if language == 'spa':
         doc_data = data.spa
 
-    page_width, page_height = pymupdf.paper_size(args.size)
-    print(f'Page width: {page_width}, height: {page_height}')
+    page_width, page_height = pymupdf.paper_size(page_size)
     font = 'times-roman'
     final = pymupdf.Document()
 
@@ -103,9 +101,10 @@ def main():
                 pymupdf.utils.insert_text(new_page, (x, y), str(hymn.number), fontsize=20, fontname=font)
         doc.close()
 
-    final.save(f'hymns-{doc_data.lang}-{args.size}.pdf')
+    final.save(f'hymns-{doc_data.lang}-{page_size}.pdf')
     final.close()
 
 
 if __name__ == '__main__':
-    main()
+    args = parse_args()
+    build_pdf(args.lang, args.size)
