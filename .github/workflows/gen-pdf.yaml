@@ -33,14 +33,16 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
 
-      - name: Generate PDF
-        run: python hymns.py
+      - name: Generate PDFs
+        run: |
+          python hymns.py --lang eng --size a4
+          python hymns.py --lang eng --size letter
+          python hymns.py --lang spa --size a4
+          python hymns.py --lang spa --size letter
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         with:
-          name: hymns.pdf
-          path: |
-            hymns-eng.pdf
-            hymns-eng-letter.pdf
+          name: hymns
+          path: hymns*.pdf
