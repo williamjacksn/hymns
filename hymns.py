@@ -13,11 +13,14 @@ src_repo = 'https://github.com/williamjacksn/hymns'
 # noinspection SpellCheckingInspection
 cover_url = f'{data.h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg'
 
+lang_choices = ['eng', 'spa']
+size_choices = ['a4', 'letter']
+
 
 def arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
-    parser.add_argument('-l', '--lang', default='eng', choices=['eng', 'spa'])
-    parser.add_argument('-s', '--size', default='letter', choices=['a4', 'letter'])
+    parser.add_argument('-l', '--lang', default='eng', choices=lang_choices)
+    parser.add_argument('-s', '--size', default='letter', choices=size_choices)
     return parser
 
 
