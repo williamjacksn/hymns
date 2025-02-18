@@ -17,11 +17,11 @@ lang_choices = ['eng', 'spa']
 size_choices = ['a4', 'letter']
 
 
-def arg_parser() -> argparse.ArgumentParser:
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument('-l', '--lang', default='eng', choices=lang_choices)
     parser.add_argument('-s', '--size', default='letter', choices=size_choices)
-    return parser
+    return parser.parse_args()
 
 
 def get_qr(text: str):
@@ -109,5 +109,5 @@ def build_pdf(language: str, page_size: str):
 
 
 if __name__ == '__main__':
-    args = arg_parser().parse_args()
+    args = parse_args()
     build_pdf(args.lang, args.size)
