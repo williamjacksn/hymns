@@ -1,6 +1,7 @@
 # Hymns
 
-Use this project to compile a single PDF containing all the hymns in the collection [Hymns&mdash;For Home and Church][a].
+Use this project to compile a single PDF containing all the hymns in the collection
+[Hymns&mdash;For Home and Church][a].
 
 [a]: https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church
 
@@ -10,7 +11,8 @@ Running `hymns.py` will perform the following actions:
 2.  Add hymn numbers to the first page of each hymn.
 3.  Arrange all hymns into a single PDF file.
 4.  Add blank pages if necessary to keep two-page hymns in a single spread.
-5.  Write the combined PDF file to `hymns-eng-letter.pdf` in the current directory. If `hymns-eng-letter.pdf` already exists, it will be overwritten.
+5.  Write the combined PDF file to `hymns-eng-letter.pdf` in the current directory. If `hymns-eng-letter.pdf` already
+    exists, it will be overwritten.
 
 The resulting PDF is designed to be printed double-sided.
 
@@ -63,7 +65,8 @@ To include the cover image on the first page of the generated file, you can use 
 
 ## Updating a printed copy
 
-If you already have a printed copy of a previous version, you only need to print added or changed pages to update your copy.
+If you already have a printed copy of a previous version, you only need to print added or changed pages to update your
+copy.
 
 ### 2024.5 &rarr; 2024.9
 
