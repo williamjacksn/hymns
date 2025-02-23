@@ -2,7 +2,7 @@
 
 Use this project to compile a single PDF containing all the hymns in the collection [Hymns&mdash;For Home and Church][a].
 
-[a]: https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church?lang=eng
+[a]: https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church
 
 Running `hymns.py` will perform the following actions:
 
@@ -41,6 +41,25 @@ You can generate all possible combinations of language and paper size by running
 ```shell
 > python gen-all.py
 ```
+
+## Cover image
+
+The official cover image for this new collection of hymns as found at [the Church&#x02bc;s website][a] is legally
+protected.
+
+> The Church&#x02bc;s wordmark and symbol are to be used only as approved by the First Presidency and Quorum of the
+> Twelve Apostles. They may not be used as decorative elements. Nor may they be used in any personal, commercial, or
+> promotional way. ([_General Handbook_, 38.8.8][b])
+
+To include the cover image on the first page of the generated file, you can use `--cover` when you run `hymns.py`:
+
+```shell
+> python hymns.py --cover
+# or abbreviated
+> python hymns.py -c
+```
+
+[b]: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines#title_number143
 
 ## Updating a printed copy
 

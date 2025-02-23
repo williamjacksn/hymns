@@ -17,11 +17,19 @@ lang_choices = ['eng', 'spa']
 size_choices = ['a4', 'letter']
 
 
-def parse_args() -> argparse.Namespace:
+class Args:
+    lang: str = 'eng'
+    size: str = 'letter'
+    cover: bool = False
+
+
+def parse_args() -> Args:
     parser = argparse.ArgumentParser()
     parser.add_argument('-l', '--lang', default='eng', choices=lang_choices)
     parser.add_argument('-s', '--size', default='letter', choices=size_choices)
-    return parser.parse_args()
+    parser.add_argument('-c', '--cover', action='store_true')
+    ns = Args()
+    return parser.parse_args(namespace=ns)
 
 
 def get_qr(text: str):
@@ -31,7 +39,7 @@ def get_qr(text: str):
     return qr_stream
 
 
-def build_pdf(language: str, page_size: str):
+def build_pdf(language: str, page_size: str, cover: bool = False):
     doc_data = data.eng
     if language == 'spa':
         doc_data = data.spa
@@ -50,14 +58,15 @@ def build_pdf(language: str, page_size: str):
     # left aligned due to the extra wide \x97 char which messes up center algo
     pymupdf.utils.insert_textbox(page, title_rect, doc_data.title, fontname=font, fontsize=doc_data.title_font_size)
 
-    img_rect = (page_width * 0.1, page_width * 0.2, page_width * 0.9, (page_width * 0.9) + (page_width * 0.1))
-    cover = pathlib.Path() / '.local/cache/cover.jpg'
-    if not cover.exists():
-        cover.parent.mkdir(parents=True, exist_ok=True)
-        print(f'Downloading {cover_url}')
-        img_response = httpx.get(cover_url)
-        cover.write_bytes(img_response.content)
-    pymupdf.utils.insert_image(page, img_rect, filename=cover.resolve())
+    if cover:
+        img_rect = (page_width * 0.1, page_width * 0.2, page_width * 0.9, (page_width * 0.9) + (page_width * 0.1))
+        cover = pathlib.Path() / '.local/cache/cover.jpg'
+        if not cover.exists():
+            cover.parent.mkdir(parents=True, exist_ok=True)
+            print(f'Downloading {cover_url}')
+            img_response = httpx.get(cover_url)
+            cover.write_bytes(img_response.content)
+        pymupdf.utils.insert_image(page, img_rect, filename=cover.resolve())
 
     pymupdf.utils.insert_textbox(page, link_rect, doc_data.hymn_link_text, fontname=font, fontsize=12, align=pymupdf.TEXT_ALIGN_CENTER)
     pymupdf.utils.insert_link(page, {
@@ -110,4 +119,4 @@ def build_pdf(language: str, page_size: str):
 
 if __name__ == '__main__':
     args = parse_args()
-    build_pdf(args.lang, args.size)
+    build_pdf(args.lang, args.size, args.cover)
