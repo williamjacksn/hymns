@@ -31,6 +31,7 @@ You can specify a different language or a different paper size by using `--lang`
 Currently supported languages are:
 
 * `eng`: English
+* `fra`: French
 * `spa`: Spanish
 
 Currently supported paper sizes are:

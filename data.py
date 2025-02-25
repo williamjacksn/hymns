@@ -9,6 +9,8 @@ class Hymn:
     asset_path: str
     num_on_left: bool = True
     blank_before: bool = False
+    excluded_pages: list[int] = dataclasses.field(default_factory=list)
+    custom_num_position: tuple[float, float] = None
 
     @property
     def pdf_url(self) -> str:
@@ -71,6 +73,54 @@ eng = DocData([
 ])
 
 # noinspection SpellCheckingInspection
+fra = DocData(
+    [
+        Hymn(1001, '30/c4/30c4a2d0073c11efb5e6eeeeac1e9990cd1dd5d0/come_thou_fount_of_every_blessing.pdf', False),
+        Hymn(1002, '2b/b7/2bb7b116097f11ef89a1eeeeac1e46f4a20eedc4/when_the_savior_comes_again.pdf'),
+        Hymn(1003, '28/83/28836118097f11ef882feeeeac1e4505adb519b9/it_is_well_with_my_soul.pdf'),
+        Hymn(1004, '27/af/27af6f44097f11ef9554eeeeac1e2f439219cbca/i_will_walk_with_jesus.pdf'),
+        Hymn(1005, '26/00/2600d4e7097f11efac44eeeeac1e90496a2e9fad/his_eye_is_on_the_sparrow.pdf'),
+        Hymn(1006, '2a/21/2a213296097f11efad51eeeeac1e84248ac0cf8a/think_a_sacred_song.pdf'),
+        Hymn(1007, '21/8c/218c3cb4097f11ef88d1eeeeac1ed719c52a4f34/as_bread_is_broken.pdf', False, excluded_pages=[1]),
+        Hymn(1008, '22/eb/22eb0963097f11efa109eeeeac1e70a58a6b7d86/bread_of_life_living_water.pdf', False, True),
+        Hymn(1009, '23/8a/238aa4c9097f11ef8a5aeeeeac1e3b9fcdbd0309/gethsemane.pdf'),
+        Hymn(1010, 'y3/7m/y37m057bd41ku7ifo58q7ry1spgk13qk7duxr8l4/amazing_grace.pdf', False, True),
+        Hymn(1011, '26/ed/26ed09a6097f11efa04beeeeac1ed97cd3b2787d/holding_hands_around_the_world.pdf'),
+        Hymn(1012, 'or/lf/orlfd3mf3clkpfto7pdywfxpel9bmidbtpecnu2s/anytime_anywhere.pdf', False, True),
+        Hymn(1013, 'gi/hi/gihiqq3209ffpau17frji60efsgq61rljixxgos5/gods_gracious_love.pdf'),
+        Hymn(1014, '9v/mn/9vmndz16d9l9h7l2zr3wtp122ypr5i8yjy427s13/my_shepherd_will_supply_my_need.pdf'),
+        Hymn(1015, 'hp/xf/hpxfkr5dzxbw92hwj9vqsduwh0sbo150jetjdx50/oh_the_deep_deep_love_of_jesus.pdf', False, True),
+        Hymn(1016, 'a6/ux/a6uxtghps14i4ssoozcejgs9cibasyq6odo6pdxr/behold_the_wounds_in_jesus_hands.pdf'),
+        Hymn(1017, '7q/zp/7qzpq1vulnt4n4l9arsex718dezssq7bw8obd1bc/this_is_the_christ.pdf'),
+        Hymn(1018, 'mm/vi/mmvisbiiw57dvknkaeb8n0qwo2fftbv5sfnvwxtp/come_lord_jesus.pdf'),
+        Hymn(1019, 'g6/1i/g61im34xzkp4g57lkpulstl8s13ia5d3z837t8mp/to_love_like_thee.pdf', False, True),
+        Hymn(1020, 'gp/9w/gp9wrc3mo329pfa8awa8rmend5zil6tstukclxls/softly_and_tenderly_jesus_is_calling.pdf'),
+        Hymn(1021, '8q/wa/8qwassgx63hy67boll7v4e52ro459q4d0lzxvs2w/i_cant_count_them_all.pdf'),
+        Hymn(1022, 'yi/jw/yijwjtstvopci0avkh4ol8l823nobcqptlfcxvn9/faith_in_every_footstep.pdf'),
+        Hymn(1023, 'lv/8d/lv8dpnyjrmynmua154j1fvkv7f1n9a2ykizdmk8b/standing_on_the_promises.pdf'),
+        Hymn(1024, '8o/d6/8od657vpjqxyhzjiv95vjr5ixxdqfycxzdmozezi/i_have_faith_in_the_lord_jesus_christ.pdf'),
+        Hymn(1025, 'jc/kp/jckptf6savvxab34ny5dbcv2236h3g1gld5vt09r/take_my_heart_and_let_it_be_consecrated.pdf'),
+        Hymn(1026, 'nu/81/nu81fvjq9ab9f2d9t8i1owhqpgm60tq1343inec7/holy_places.pdf', False),
+        Hymn(1027, '05/s0/05s0daaceszp9yp01jmthqmuamg9231u7o3mih2q/welcome_home.pdf'),
+        Hymn(1028, 'uk/lw/uklwlgmummoix6b65m2301gh0ylcmpz6j43b0swo/this_little_light_of_mine.pdf'),
+        Hymn(1029, '7n/6i/7n6irgk6xct34xz18hf8xtu27wmzbnce48gs2ljb/i_cant_count_them_all.pdf', False),
+        Hymn(1030, 'yn/ge/yngevzb1vct2puwrd4bmvreo3jfdeidixqu2293v/close_as_a_quiet_prayer.pdf'),
+        Hymn(1031, 'pt/z7/ptz77oj92sut1n1rp20cyu0fl11z8ffvwxd42lwi/come_hear_the_word_the_lord_has_spoken.pdf', False, True),
+        Hymn(1201, '24/78/2478120a097f11efae13eeeeac1e705949a29d62/hail_the_day_that_sees_him_rise.pdf', False, True),
+        Hymn(1202, '80/04/800459b10e8611efa950eeeeac1ef0d0090f76f2/he_is_born_the_divine_christ_child.pdf', False, True, custom_num_position=(0.82, 0.137)),
+        Hymn(1203, '2a/d4/2ad4f232097f11efabb0eeeeac1e06f99913c180/what_child_is_this.pdf'),
+        Hymn(1204, '29/45/29450364097f11efb9ceeeeeac1ed262191adfc5/star_bright.pdf'),
+        Hymn(1205, 'd8/4o/d84ogspp8cp0nnzfe9n6cmsjscziveuxvtfb40bt/let_easter_anthems_ring.pdf', False, True),
+        Hymn(1206, '9a/90/9a9067jxwg1y0rkf58wzwvqhkax8oyrh2xvbgzmf/were_you_there.pdf'),
+    ],
+    title='Cantiques \x96 Pour le foyer et l\x92église',
+    title_font_size=34,
+    hymn_link_text='\nScannez ce code pour accéder à ces hymnes numériquement',
+    rev_text='Révision',
+    lang='fra'
+)
+
+# noinspection SpellCheckingInspection
 spa = DocData(
     [
         Hymn(1001, 'c2/84/c284c254073b11efbfd2eeeeac1e0cc7c94404a1/come_thou_fount_of_every_blessing.pdf', False),
@@ -112,7 +162,7 @@ spa = DocData(
         Hymn(1206, 'v3/gd/v3gd4rag00g44u16ik7v8noshtwt94gq6uc2law8/were_you_there.pdf'),
     ],
     title='Himnos \x97 Para el hogar y la Iglesia',
-    title_font_size=27,
+    title_font_size=33,
     hymn_link_text='\nEscanee este código para acceder los himnos digitalmente',
     rev_text='Revisión',
     lang='spa'
