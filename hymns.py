@@ -39,14 +39,14 @@ def get_qr(text: str):
     return qr_stream
 
 
-def build_pdf(language: str, page_size: str, cover: bool = False):
     doc_data = data.eng
     if language == 'spa':
         doc_data = data.spa
     elif language == 'fra':
         doc_data = data.fra
+def build_pdf(language: str, paper_size: str, cover: bool = False):
 
-    page_width, page_height = pymupdf.paper_size(page_size)
+    page_width, page_height = pymupdf.paper_size(paper_size)
     font = 'times-roman'
     final = pymupdf.Document()
 
@@ -104,23 +104,16 @@ def build_pdf(language: str, page_size: str, cover: bool = False):
         if hymn.blank_before:
             pymupdf.utils.new_page(final, width=page_width, height=page_height)
         for page in doc:
-            if page.number in hymn.excluded_pages:
+            if page.number + 1 in hymn.excluded_pages:
                 continue
             new_page = pymupdf.utils.new_page(final, width=page_width, height=page_height)
             pymupdf.utils.show_pdf_page(new_page, new_page.rect, doc, page.number)
             if page.number == 0:
-                y = page_height * 0.067
-                if hymn.custom_num_position:
-                    x = page_width * hymn.custom_num_position[0]
-                    y = page_height * hymn.custom_num_position[1]
-                elif hymn.num_on_left:
-                    x = page_width * 0.11
-                else:
-                    x = page_width * 0.82
-                pymupdf.utils.insert_text(new_page, (x, y), str(hymn.number), fontsize=20, fontname=font)
+                point = (page_width * hymn.x(paper_size), page_height * hymn.y(paper_size))
+                pymupdf.utils.insert_text(new_page, point, str(hymn.number), fontsize=20, fontname=font)
         doc.close()
 
-    final.save(f'hymns-{doc_data.lang}-{page_size}.pdf')
+    final.save(f'hymns-{doc_data.lang}-{paper_size}.pdf')
     final.close()
 
 

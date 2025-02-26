@@ -3,6 +3,26 @@ import dataclasses
 h = 'https://assets.churchofjesuschrist.org'
 
 
+class DefaultOffsets:
+    @staticmethod
+    def x(num_on_left: bool, paper_size: str) -> float:
+        if paper_size == 'a4':
+            if num_on_left:
+                return 0.075
+            else:
+                return 0.857
+        else:
+            if num_on_left:
+                return 0.11
+            else:
+                return 0.82
+
+
+    @staticmethod
+    def y(paper_size: str) -> float:
+        return 0.067
+
+
 @dataclasses.dataclass
 class Hymn:
     number: int
@@ -10,11 +30,23 @@ class Hymn:
     num_on_left: bool = True
     blank_before: bool = False
     excluded_pages: list[int] = dataclasses.field(default_factory=list)
-    custom_num_position: tuple[float, float] = None
+    offsets: dict[str, tuple[float, float]] = dataclasses.field(default_factory=dict)
 
     @property
     def pdf_url(self) -> str:
         return f'{h}/{self.asset_path}'
+
+    def x(self, paper_size: str = 'letter') -> float:
+        if paper_size in self.offsets:
+            return self.offsets.get(paper_size)[0]
+        else:
+            return DefaultOffsets.x(self.num_on_left, paper_size)
+
+    def y(self, paper_size: str = 'letter') -> float:
+        if paper_size in self.offsets:
+            return self.offsets.get(paper_size)[1]
+        else:
+            return DefaultOffsets.y(paper_size)
 
 
 @dataclasses.dataclass
@@ -72,6 +104,7 @@ eng = DocData([
     Hymn(1206, '35/d0/35d0uc1i13madxx6wzlecpu3347lv09uebqrs75o/were_you_there.pdf'),
 ])
 
+
 # noinspection SpellCheckingInspection
 fra = DocData(
     [
@@ -81,7 +114,7 @@ fra = DocData(
         Hymn(1004, '27/af/27af6f44097f11ef9554eeeeac1e2f439219cbca/i_will_walk_with_jesus.pdf'),
         Hymn(1005, '26/00/2600d4e7097f11efac44eeeeac1e90496a2e9fad/his_eye_is_on_the_sparrow.pdf'),
         Hymn(1006, '2a/21/2a213296097f11efad51eeeeac1e84248ac0cf8a/think_a_sacred_song.pdf'),
-        Hymn(1007, '21/8c/218c3cb4097f11ef88d1eeeeac1ed719c52a4f34/as_bread_is_broken.pdf', False, excluded_pages=[1]),
+        Hymn(1007, '21/8c/218c3cb4097f11ef88d1eeeeac1ed719c52a4f34/as_bread_is_broken.pdf', False, excluded_pages=[2]),
         Hymn(1008, '22/eb/22eb0963097f11efa109eeeeac1e70a58a6b7d86/bread_of_life_living_water.pdf', False, True),
         Hymn(1009, '23/8a/238aa4c9097f11ef8a5aeeeeac1e3b9fcdbd0309/gethsemane.pdf'),
         Hymn(1010, 'y3/7m/y37m057bd41ku7ifo58q7ry1spgk13qk7duxr8l4/amazing_grace.pdf', False, True),
@@ -107,7 +140,10 @@ fra = DocData(
         Hymn(1030, 'yn/ge/yngevzb1vct2puwrd4bmvreo3jfdeidixqu2293v/close_as_a_quiet_prayer.pdf'),
         Hymn(1031, 'pt/z7/ptz77oj92sut1n1rp20cyu0fl11z8ffvwxd42lwi/come_hear_the_word_the_lord_has_spoken.pdf', False, True),
         Hymn(1201, '24/78/2478120a097f11efae13eeeeac1e705949a29d62/hail_the_day_that_sees_him_rise.pdf', False, True),
-        Hymn(1202, '80/04/800459b10e8611efa950eeeeac1ef0d0090f76f2/he_is_born_the_divine_christ_child.pdf', False, True, custom_num_position=(0.82, 0.137)),
+        Hymn(
+            1202, '80/04/800459b10e8611efa950eeeeac1ef0d0090f76f2/he_is_born_the_divine_christ_child.pdf', False, True,
+            offsets={'letter': (0.82, 0.137)}
+        ),
         Hymn(1203, '2a/d4/2ad4f232097f11efabb0eeeeac1e06f99913c180/what_child_is_this.pdf'),
         Hymn(1204, '29/45/29450364097f11efb9ceeeeeac1ed262191adfc5/star_bright.pdf'),
         Hymn(1205, 'd8/4o/d84ogspp8cp0nnzfe9n6cmsjscziveuxvtfb40bt/let_easter_anthems_ring.pdf', False, True),
