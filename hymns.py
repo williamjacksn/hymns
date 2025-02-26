@@ -39,12 +39,12 @@ def get_qr(text: str):
     return qr_stream
 
 
+def build_pdf(language: str, paper_size: str, cover: bool = False):
     doc_data = data.eng
     if language == 'spa':
         doc_data = data.spa
     elif language == 'fra':
         doc_data = data.fra
-def build_pdf(language: str, paper_size: str, cover: bool = False):
 
     page_width, page_height = pymupdf.paper_size(paper_size)
     font = 'times-roman'
