@@ -53,14 +53,21 @@ class Hymn:
 class DocData:
     hymns: list[Hymn]
     title: str = 'Hymns\x97For Home and Church'
-    title_font_size: int = 38
-    hymn_link_text: str = '\nScan this code to access these hymns digitally'
+    t_font_size: dict[str, int] = dataclasses.field(default_factory=dict)
+    hymn_link_text: str = 'Scan this code to access these hymns digitally'
     rev_text: str = 'Revision'
     lang: str = 'eng'
 
     @property
     def hymns_homepage(self) -> str:
         return f'https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church?lang={self.lang}'
+
+    def title_font_size(self, paper_size: str) -> int:
+        if paper_size in self.t_font_size:
+            return self.t_font_size.get(paper_size)
+        if paper_size == 'a4':
+            return 37
+        return 38
 
 
 # noinspection SpellCheckingInspection
@@ -150,8 +157,8 @@ fra = DocData(
         Hymn(1206, '9a/90/9a9067jxwg1y0rkf58wzwvqhkax8oyrh2xvbgzmf/were_you_there.pdf'),
     ],
     title='Cantiques \x96 Pour le foyer et l\x92église',
-    title_font_size=34,
-    hymn_link_text='\nScannez ce code pour accéder à ces hymnes numériquement',
+    t_font_size=dict(letter=34),
+    hymn_link_text='Scannez ce code pour accéder à ces hymnes numériquement',
     rev_text='Révision',
     lang='fra'
 )
@@ -199,8 +206,8 @@ por = DocData(
         Hymn(1206, 's9/ru/s9ru99vxqws6c6nxrvueojhgstv6jnzekdolfe50/were_you_there.pdf'),
     ],
     title='Hinos \x97 Para o Lar e para a Igreja',
-    title_font_size=35,
-    hymn_link_text='\nDigitalize este código para acessar esses hinos digitalmente',
+    t_font_size=dict(letter=35),
+    hymn_link_text='Digitalize este código para acessar esses hinos digitalmente',
     rev_text='Revisão',
     lang='por'
 )
@@ -248,8 +255,8 @@ spa = DocData(
         Hymn(1206, 'v3/gd/v3gd4rag00g44u16ik7v8noshtwt94gq6uc2law8/were_you_there.pdf'),
     ],
     title='Himnos \x97 Para el hogar y la Iglesia',
-    title_font_size=33,
-    hymn_link_text='\nEscanee este código para acceder los himnos digitalmente',
+    t_font_size=dict(letter=33),
+    hymn_link_text='Escanee este código para acceder los himnos digitalmente',
     rev_text='Revisión',
     lang='spa'
 )

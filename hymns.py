@@ -54,7 +54,7 @@ def build_pdf(language: str, paper_size: str, cover: bool = False):
     page = pymupdf.utils.new_page(final, width=page_width, height=page_height)
     title_rect = (page_width * 0.1, page_height * 0.05, page_width * 0.9, page_height * 0.15)
     # left aligned due to the extra wide \x97 char which messes up center algo
-    pymupdf.utils.insert_textbox(page, title_rect, doc_data.title, fontname=font, fontsize=doc_data.title_font_size)
+    pymupdf.utils.insert_textbox(page, title_rect, doc_data.title, fontname=font, fontsize=doc_data.title_font_size(paper_size))
 
     if cover:
         img_rect = (page_width * 0.1, page_width * 0.2, page_width * 0.9, (page_width * 0.9) + (page_width * 0.1))
@@ -66,7 +66,8 @@ def build_pdf(language: str, paper_size: str, cover: bool = False):
             cover.write_bytes(img_response.content)
         pymupdf.utils.insert_image(page, img_rect, filename=cover.resolve())
 
-    pymupdf.utils.insert_textbox(page, link_rect, doc_data.hymn_link_text, fontname=font, fontsize=12, align=pymupdf.TEXT_ALIGN_CENTER)
+    text = f'\n{doc_data.hymn_link_text}'
+    pymupdf.utils.insert_textbox(page, link_rect, text, fontname=font, fontsize=12, align=pymupdf.TEXT_ALIGN_CENTER)
     pymupdf.utils.insert_link(page, {
         'from': link_rect,
         'kind': pymupdf.LINK_URI,
