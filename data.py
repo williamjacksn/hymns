@@ -149,7 +149,7 @@ fra = DocData(
         Hymn(1201, '24/78/2478120a097f11efae13eeeeac1e705949a29d62/hail_the_day_that_sees_him_rise.pdf', False, True),
         Hymn(
             1202, '80/04/800459b10e8611efa950eeeeac1ef0d0090f76f2/he_is_born_the_divine_christ_child.pdf', False, True,
-            offsets={'letter': (0.82, 0.137)}
+            offsets=dict(letter=(0.82, 0.137))
         ),
         Hymn(1203, '2a/d4/2ad4f232097f11efabb0eeeeac1e06f99913c180/what_child_is_this.pdf'),
         Hymn(1204, '29/45/29450364097f11efb9ceeeeeac1ed262191adfc5/star_bright.pdf'),
@@ -157,7 +157,7 @@ fra = DocData(
         Hymn(1206, '9a/90/9a9067jxwg1y0rkf58wzwvqhkax8oyrh2xvbgzmf/were_you_there.pdf'),
     ],
     title='Cantiques \x96 Pour le foyer et l\x92église',
-    t_font_size=dict(letter=34),
+    t_font_size=dict(a4=33, letter=34),
     hymn_link_text='Scannez ce code pour accéder à ces hymnes numériquement',
     rev_text='Révision',
     lang='fra'
@@ -206,7 +206,7 @@ por = DocData(
         Hymn(1206, 's9/ru/s9ru99vxqws6c6nxrvueojhgstv6jnzekdolfe50/were_you_there.pdf'),
     ],
     title='Hinos \x97 Para o Lar e para a Igreja',
-    t_font_size=dict(letter=35),
+    t_font_size=dict(a4=34, letter=35),
     hymn_link_text='Digitalize este código para acessar esses hinos digitalmente',
     rev_text='Revisão',
     lang='por'
@@ -255,7 +255,7 @@ spa = DocData(
         Hymn(1206, 'v3/gd/v3gd4rag00g44u16ik7v8noshtwt94gq6uc2law8/were_you_there.pdf'),
     ],
     title='Himnos \x97 Para el hogar y la Iglesia',
-    t_font_size=dict(letter=33),
+    t_font_size=dict(a4=33, letter=33),
     hymn_link_text='Escanee este código para acceder los himnos digitalmente',
     rev_text='Revisión',
     lang='spa'
