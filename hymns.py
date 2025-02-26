@@ -13,7 +13,7 @@ src_repo = 'https://github.com/williamjacksn/hymns'
 # noinspection SpellCheckingInspection
 cover_url = f'{data.h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg'
 
-lang_choices = ['eng', 'fra', 'spa']
+lang_choices = data.lang_map.keys()
 size_choices = ['a4', 'letter']
 
 
@@ -40,11 +40,7 @@ def get_qr(text: str):
 
 
 def build_pdf(language: str, paper_size: str, cover: bool = False):
-    doc_data = data.eng
-    if language == 'spa':
-        doc_data = data.spa
-    elif language == 'fra':
-        doc_data = data.fra
+    doc_data = data.lang_map.get(language, data.eng)
 
     page_width, page_height = pymupdf.paper_size(paper_size)
     font = 'times-roman'

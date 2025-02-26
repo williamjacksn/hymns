@@ -32,6 +32,7 @@ Currently supported languages are:
 
 * `eng`: English
 * `fra`: French
+* `por`: Portuguese (Brazil)
 * `spa`: Spanish
 
 Currently supported paper sizes are:
