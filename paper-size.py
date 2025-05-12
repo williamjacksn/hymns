@@ -2,7 +2,7 @@ import argparse
 import pymupdf
 
 parser = argparse.ArgumentParser()
-parser.add_argument('file')
+parser.add_argument("file")
 args = parser.parse_args()
 
 doc = pymupdf.open(args.file)
