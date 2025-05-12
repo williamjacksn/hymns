@@ -24,17 +24,11 @@ jobs:
           key: download-cache
           path: .local
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          cache: pip
-          python-version: '3.13'
-
-      - name: Install requirements
-        run: pip install -r requirements.txt
+      - name: Install uv
+        run: sh ci/install-uv.sh
 
       - name: Generate PDFs
-        run: python gen-all.py
+        run: sh ci/generate-pdfs.sh
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
