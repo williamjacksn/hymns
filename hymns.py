@@ -7,7 +7,7 @@ import pymupdf
 import qrcode.image.pure
 
 
-revision = "2025.2.2"
+revision = "2025.6.0"
 src_repo = "https://github.com/williamjacksn/hymns"
 
 # noinspection SpellCheckingInspection

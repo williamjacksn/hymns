@@ -202,14 +202,50 @@ eng = DocData(
         Hymn(
             1031,
             "o8/wi/o8wigqygh5dll0mxq6qvegfy9gbcu8815uxpbic1/come_hear_the_word_the_lord_has_spoken.pdf",
+        ),
+        Hymn(
+            1032,
+            "ks/iq/ksiqaqmbw5d73vtpbvjl9i1hwp1991hezj80z10t/look_unto_christ.pdf",
             False,
-            True,
+        ),
+        Hymn(
+            1033,
+            "1j/kg/1jkgot13zdk5ij9ir1gvw785bvi5jkafom5knwov/oh_how_great_is_our_joy.pdf",
+        ),
+        Hymn(
+            1034, "fk/hv/fkhv4f39s3sgbrkzjj891iak4st1fagrycdge7m9/im_a_pioneer_too.pdf"
+        ),
+        Hymn(
+            1035,
+            "87/af/87aferimm4bh9h1asmajpvlnx902w98ehjpfv577/as_i_keep_the_sabbath_day.pdf",
+            False,
+        ),
+        Hymn(
+            1036,
+            "vj/vq/vjvqnfv5f0180jmyzm8oewrmiu61hl2vykalwm56/read_the_book_of_mormon_and_pray.pdf",
+        ),
+        Hymn(
+            1037,
+            "af/ny/afny05n5s6xkznyrhv4vqdjnh76qs1576vjahmwo/im_gonna_live_so_god_can_use_me.pdf",
+        ),
+        Hymn(
+            1038,
+            "wg/rf/wgrfga1tcvxx56agz3lh62apy67aofyu6yhhgf2b/the_lords_my_shepherd.pdf",
+            False,
+        ),
+        Hymn(1039, "l8/aa/l8aa8iq55nwm4ppvfm3qcr34oi81as8jwngih6kp/because.pdf"),
+        Hymn(
+            1040,
+            "r6/rl/r6rli8pz3gawtj2f9bf9144ubs1zjlt4j6bxbcwl/his_voice_as_the_sound.pdf",
+        ),
+        Hymn(
+            1041,
+            "cj/oh/cjohf082cbp6pbodqau3zm9i9gmi4i3yk8hzdtsy/o_lord_who_gave_thy_life_for_me.pdf",
         ),
         Hymn(
             1201,
             "6e/9f/6e9fac3debb511eea036eeeeac1ec84f90cdba38/hail_the_day_that_sees_him_rise.pdf",
             False,
-            True,
         ),
         Hymn(
             1202,
@@ -229,6 +265,12 @@ eng = DocData(
             True,
         ),
         Hymn(1206, "35/d0/35d0uc1i13madxx6wzlecpu3347lv09uebqrs75o/were_you_there.pdf"),
+        Hymn(
+            1207,
+            "2z/gf/2zgfzovjzxpf440zhrjzixmxrmvih0r8b9h7sdnf/still_still_still.pdf",
+            False,
+            True,
+        ),
     ]
 )
 
@@ -367,14 +409,50 @@ fra = DocData(
         Hymn(
             1031,
             "pt/z7/ptz77oj92sut1n1rp20cyu0fl11z8ffvwxd42lwi/come_hear_the_word_the_lord_has_spoken.pdf",
+        ),
+        Hymn(
+            1032,
+            "bw/97/bw97csg5z49rszwumth3j462wogedt05yzs7ez6d/look_unto_christ.pdf",
             False,
-            True,
+        ),
+        Hymn(
+            1033,
+            "oc/5f/oc5ftg2dhfvlbidqesh2ty60hclepf5h9zu0alak/oh_how_great_is_our_joy.pdf",
+        ),
+        Hymn(
+            1034, "u9/iw/u9iwsqur10qc7fhwsxz2cyzq6tjfpqch4i21vqrv/im_a_pioneer_too.pdf"
+        ),
+        Hymn(
+            1035,
+            "m5/s0/m5s0ktzhzxk1bowxoxghrejmifmob0y0s9za6e7e/as_i_keep_the_sabbath_day.pdf",
+            False,
+        ),
+        Hymn(
+            1036,
+            "3n/fl/3nfl2q53dbl7kibtafna1prq4n4q3s382lysumn0/read_the_book_of_mormon_and_pray.pdf",
+        ),
+        Hymn(
+            1037,
+            "5l/80/5l805n6sfgwtztrm5vwve0t7zto3yjrwu2zt2nuw/im_gonna_live_so_god_can_use_me.pdf",
+        ),
+        Hymn(
+            1038,
+            "u7/99/u799ddbgvv07qt91kwtzalapm05d2w83sl7gcg8t/the_lords_my_shepherd.pdf",
+            False,
+        ),
+        Hymn(1039, "of/s1/ofs1rwmz213u27haebciuvazv33uyfpfdul4vwgr/because.pdf"),
+        Hymn(
+            1040,
+            "l2/kx/l2kxmn57mbwszynpge3qqqx9u3ex1o0atabmc9sa/his_voice_as_the_sound.pdf",
+        ),
+        Hymn(
+            1041,
+            "b1/xl/b1xltz3yvbcavk7rkh8sbbbjtdoghe69dbn4f59q/o_lord_who_gave_thy_life_for_me.pdf",
         ),
         Hymn(
             1201,
             "24/78/2478120a097f11efae13eeeeac1e705949a29d62/hail_the_day_that_sees_him_rise.pdf",
             False,
-            True,
         ),
         Hymn(
             1202,
@@ -395,6 +473,12 @@ fra = DocData(
             True,
         ),
         Hymn(1206, "9a/90/9a9067jxwg1y0rkf58wzwvqhkax8oyrh2xvbgzmf/were_you_there.pdf"),
+        Hymn(
+            1207,
+            "fj/ls/fjlswc2uz90wk7tldnzp44ek65sttr1vl73qbcur/still_still_still.pdf",
+            False,
+            True,
+        ),
     ],
     title="Cantiques \x96 Pour le foyer et l\x92église",
     t_font_size=dict(a4=33, letter=34),
@@ -537,14 +621,50 @@ por = DocData(
         Hymn(
             1031,
             "lz/0h/lz0hcxwj4zmix2r5nl17trs1knzrfkqcosi31cw4/come_hear_the_word_the_lord_has_spoken.pdf",
+        ),
+        Hymn(
+            1032,
+            "ve/kq/vekq8lhs33l7aj83wuugsy0x5n2snn7l3u5c8wp8/look_unto_christ.pdf",
             False,
-            True,
+        ),
+        Hymn(
+            1033,
+            "vi/kv/vikvr874exjzrx3iaxvm0ba0m606hzjc7z8wdf4n/oh_how_great_is_our_joy.pdf",
+        ),
+        Hymn(
+            1034, "69/n3/69n3vkkfo72ydsap47zuz03kfbj3nywklo6lxlet/im_a_pioneer_too.pdf"
+        ),
+        Hymn(
+            1035,
+            "9b/2v/9b2vc5ztzcowrt40ph214h2kz72xbxvgmc8swsni/as_i_keep_the_sabbath_day.pdf",
+            False,
+        ),
+        Hymn(
+            1036,
+            "ln/pl/lnplx328sxrw2d4e2veap39i8wvjvstl0d47z4ja/read_the_book_of_mormon_and_pray.pdf",
+        ),
+        Hymn(
+            1037,
+            "rk/cw/rkcwxikjn02egjq6ji50xs8wv31dijkxw2myblk7/im_gonna_live_so_god_can_use_me.pdf",
+        ),
+        Hymn(
+            1038,
+            "vf/p1/vfp1t5yawhhqknr3ewykddhvzn44q3fbz96bdpxo/the_lords_my_shepherd.pdf",
+            False,
+        ),
+        Hymn(1039, "18/xf/18xf2nv5nl53umpxu6mxtfuhob4pyxgdbw5n48r9/because.pdf"),
+        Hymn(
+            1040,
+            "q5/ft/q5ft2in03jylm6szyeuhksi7irnbs77bq84bkz0j/his_voice_as_the_sound.pdf",
+        ),
+        Hymn(
+            1041,
+            "8h/7j/8h7jwm8q2be68hfhxbay979cheh8hps1wcapkacc/o_lord_who_gave_thy_life_for_me.pdf",
         ),
         Hymn(
             1201,
             "45/87/458703350cb311efaf07eeeeac1e99beb8fedf6e/hail_the_day_that_sees_him_rise.pdf",
             False,
-            True,
         ),
         Hymn(
             1202,
@@ -564,6 +684,12 @@ por = DocData(
             True,
         ),
         Hymn(1206, "s9/ru/s9ru99vxqws6c6nxrvueojhgstv6jnzekdolfe50/were_you_there.pdf"),
+        Hymn(
+            1207,
+            "ue/ih/ueihr5b8g7df8p38iju29vs5qky39wsnc0dvigeo/still_still_still.pdf",
+            False,
+            True,
+        ),
     ],
     title="Hinos \x97 Para o Lar e para a Igreja",
     t_font_size=dict(a4=34, letter=35),
@@ -706,14 +832,50 @@ spa = DocData(
         Hymn(
             1031,
             "dd/hx/ddhx8cggoprf726m2fro8xfj7l97fzqsyv9df4w8/come_hear_the_word_the_lord_has_spoken.pdf",
+        ),
+        Hymn(
+            1032,
+            "xr/5w/xr5wt8srqghwh8fdipaqw9fogxykygfk36aj12fx/look_unto_christ.pdf",
             False,
-            True,
+        ),
+        Hymn(
+            1033,
+            "9z/54/9z54zv645djbm8uc88fz436fztc9unecxlq5f01u/oh_how_great_is_our_joy.pdf",
+        ),
+        Hymn(
+            1034, "bu/6s/bu6spilnlhr3srp430n3pwzjene7zomnqhaveenw/im_a_pioneer_too.pdf"
+        ),
+        Hymn(
+            1035,
+            "2z/yc/2zyc0ve956dpyokbyo9ft460oynapd2ft1po395n/as_i_keep_the_sabbath_day.pdf",
+            False,
+        ),
+        Hymn(
+            1036,
+            "5g/0c/5g0c09k3vi05akrwfcp9ekeficqo44pisoktzrf1/read_the_book_of_mormon_and_pray.pdf",
+        ),
+        Hymn(
+            1037,
+            "gb/92/gb92hl3y9zfgbw5m28vofy9ht2jtdsz3qrd7zv09/im_gonna_live_so_god_can_use_me.pdf",
+        ),
+        Hymn(
+            1038,
+            "wg/68/wg68cd6nirfbhchkq1j0tjb49kjg96s3k9vdrwa8/the_lords_my_shepherd.pdf",
+            False,
+        ),
+        Hymn(1039, "aq/i0/aqi0oy1939ymjl1skxy7zd0orf9x9chhe8dwlpb0/because.pdf"),
+        Hymn(
+            1040,
+            "kk/k8/kkk89410m2osdpeoqpby7px2ra8lovnzj1qcy41o/his_voice_as_the_sound.pdf",
+        ),
+        Hymn(
+            1041,
+            "o1/sb/o1sb39bgi537vs0d895qnvncobt7pxwp5nmfl5yc/o_lord_who_gave_thy_life_for_me.pdf",
         ),
         Hymn(
             1201,
             "5d/1e/5d1e15ee0ca311efb82eeeeeac1e03e79b85b9b2/hail_the_day_that_sees_him_rise.pdf",
             False,
-            True,
         ),
         Hymn(
             1202,
@@ -733,6 +895,12 @@ spa = DocData(
             True,
         ),
         Hymn(1206, "v3/gd/v3gd4rag00g44u16ik7v8noshtwt94gq6uc2law8/were_you_there.pdf"),
+        Hymn(
+            1207,
+            "a2/yr/a2yr0k9yk46j787x26u6wlz5kaxr04u05idcyvwh/still_still_still.pdf",
+            False,
+            True,
+        ),
     ],
     title="Himnos \x97 Para el hogar y la Iglesia",
     t_font_size=dict(a4=33, letter=33),

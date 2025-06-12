@@ -80,3 +80,9 @@ copy.
 * Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
 * Print pages 35&ndash;60 to replace pages 35&ndash;36 in your existing copy.
 * Print pages 67&ndash;69 to insert at the end of your existing copy.
+
+### 2025.2 &rarr; 2025.6
+
+* Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
+* Print pages 55&ndash;70 to replace pages 55&ndash;58 in your existing copy.
+* Print page 83 to insert at the end of your existing copy.
