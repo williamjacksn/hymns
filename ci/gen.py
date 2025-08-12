@@ -73,8 +73,8 @@ def gen_ruff_workflow():
     content = {
         "name": "Ruff",
         "on": {
-            "pull_request": {"branches": ["master"]},
-            "push": {"branches": ["master"]},
+            "pull_request": {"branches": ["main"]},
+            "push": {"branches": ["main"]},
         },
         "permissions": {"contents": "read"},
         "env": {
