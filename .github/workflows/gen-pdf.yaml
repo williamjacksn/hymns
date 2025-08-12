@@ -1,38 +1,52 @@
-name: Generate PDF
-
-on:
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
-jobs:
-  gen-pdf:
-    name: Generate PDF
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Configure Actions cache for downloaded content
-        uses: actions/cache@v4
-        with:
-          key: download-cache
-          path: .local
-
-      - name: Install uv
-        run: sh ci/install-uv.sh
-
-      - name: Generate PDFs
-        run: sh ci/generate-pdfs.sh
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        with:
-          name: hymns
-          path: hymns*.pdf
+{
+  "env": {
+    "description": "This workflow (.github/workflows/gen-pdf.yaml) was generated from ci/gen.py"
+  },
+  "jobs": {
+    "gen-pdf": {
+      "name": "Generate PDF",
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "name": "Check out repository",
+          "uses": "actions/checkout@v5"
+        },
+        {
+          "name": "Configure Actions cache for downloaded content",
+          "uses": "actions/cache@v4",
+          "with": {
+            "key": "download-cache",
+            "path": ".local"
+          }
+        },
+        {
+          "name": "Generate PDFs",
+          "run": "sh ci/generate-pdfs.sh"
+        },
+        {
+          "if": "github.event_name == 'push' || github.event_name == 'workflow_dispatch'",
+          "name": "Upload artifact",
+          "uses": "actions/upload-artifact@v4",
+          "with": {
+            "name": "hymns",
+            "path": "hymns*.pdf"
+          }
+        }
+      ]
+    }
+  },
+  "name": "Generate PDF",
+  "on": {
+    "pull_request": {
+      "branches": [
+        "main"
+      ]
+    },
+    "push": {
+      "branches": [
+        "main"
+      ]
+    },
+    "workflow_dispatch": {}
+  }
+}
