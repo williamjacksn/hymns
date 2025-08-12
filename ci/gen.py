@@ -106,6 +106,7 @@ def gen_ruff_workflow():
 def main():
     gen_dependabot()
     gen_pdf_workflow()
+    gen_ruff_workflow()
 
 
 if __name__ == "__main__":
