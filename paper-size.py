@@ -1,4 +1,5 @@
 import argparse
+
 import pymupdf
 
 parser = argparse.ArgumentParser()

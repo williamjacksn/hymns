@@ -1,11 +1,12 @@
 import argparse
-import data
-import httpx
 import io
 import pathlib
+
+import httpx
 import pymupdf
 import qrcode.image.pure
 
+import data
 
 revision = "2025.6.0"
 src_repo = "https://github.com/williamjacksn/hymns"

@@ -1,5 +1,6 @@
-import hymns
 import itertools
+
+import hymns
 
 if __name__ == "__main__":
     for lang, size in itertools.product(hymns.lang_choices, hymns.size_choices):
