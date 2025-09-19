@@ -40,15 +40,15 @@ def gen_pdf_workflow():
         "env": {
             "description": f"This workflow ({target}) was generated from {THIS_FILE}",
         },
-        "name": "Generate PDF",
+        "name": "Generate PDFs",
         "on": {
             "pull_request": {"branches": ["main"]},
             "push": {"branches": ["main"]},
             "workflow_dispatch": {},
         },
         "jobs": {
-            "gen-pdf": {
-                "name": "Generate PDF",
+            "gen-pdfs": {
+                "name": "Generate PDFs",
                 "runs-on": "ubuntu-latest",
                 "steps": [
                     ACTIONS_CHECKOUT,

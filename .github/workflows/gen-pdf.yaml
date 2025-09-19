@@ -3,8 +3,8 @@
     "description": "This workflow (.github/workflows/gen-pdf.yaml) was generated from ci/gen.py"
   },
   "jobs": {
-    "gen-pdf": {
-      "name": "Generate PDF",
+    "gen-pdfs": {
+      "name": "Generate PDFs",
       "runs-on": "ubuntu-latest",
       "steps": [
         {
@@ -35,7 +35,7 @@
       ]
     }
   },
-  "name": "Generate PDF",
+  "name": "Generate PDFs",
   "on": {
     "pull_request": {
       "branches": [
