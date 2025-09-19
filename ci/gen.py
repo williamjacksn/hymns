@@ -1,10 +1,10 @@
 import json
 import pathlib
 
+ACTIONS_CHECKOUT = {"name": "Check out repository", "uses": "actions/checkout@v5"}
 THIS_FILE = pathlib.PurePosixPath(
     pathlib.Path(__file__).relative_to(pathlib.Path().resolve())
 )
-ACTIONS_CHECKOUT = {"name": "Check out repository", "uses": "actions/checkout@v5"}
 
 
 def gen(content: dict, target: str):
@@ -72,32 +72,28 @@ def gen_ruff_workflow():
     target = ".github/workflows/ruff.yaml"
     content = {
         "name": "Ruff",
-        "on": {
-            "pull_request": {"branches": ["main"]},
-            "push": {"branches": ["main"]},
-        },
+        "on": {"pull_request": {"branches": ["main"]}, "push": {"branches": ["main"]}},
         "permissions": {"contents": "read"},
         "env": {
             "description": f"This workflow ({target}) was generated from {THIS_FILE}",
         },
         "jobs": {
-            "ruff": {
-                "name": "Run ruff linting and formatting checks",
+            "ruff-check": {
+                "name": "Run ruff check",
                 "runs-on": "ubuntu-latest",
                 "steps": [
                     ACTIONS_CHECKOUT,
-                    {
-                        "name": "Run ruff check",
-                        "uses": "astral-sh/ruff-action@v3",
-                        "with": {"args": "check --output-format=github"},
-                    },
-                    {
-                        "name": "Run ruff format",
-                        "uses": "astral-sh/ruff-action@v3",
-                        "with": {"args": "format --check"},
-                    },
+                    {"name": "Run ruff check", "run": "sh ci/ruff-check.sh"},
                 ],
-            }
+            },
+            "ruff-format": {
+                "name": "Run ruff format",
+                "runs-on": "ubuntu-latest",
+                "steps": [
+                    ACTIONS_CHECKOUT,
+                    {"name": "Run ruff format", "run": "sh ci/ruff-format.sh"},
+                ],
+            },
         },
     }
     gen(content, target)

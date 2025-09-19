@@ -3,8 +3,8 @@
     "description": "This workflow (.github/workflows/ruff.yaml) was generated from ci/gen.py"
   },
   "jobs": {
-    "ruff": {
-      "name": "Run ruff linting and formatting checks",
+    "ruff-check": {
+      "name": "Run ruff check",
       "runs-on": "ubuntu-latest",
       "steps": [
         {
@@ -13,17 +13,21 @@
         },
         {
           "name": "Run ruff check",
-          "uses": "astral-sh/ruff-action@v3",
-          "with": {
-            "args": "check --output-format=github"
-          }
+          "run": "sh ci/ruff-check.sh"
+        }
+      ]
+    },
+    "ruff-format": {
+      "name": "Run ruff format",
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "name": "Check out repository",
+          "uses": "actions/checkout@v5"
         },
         {
           "name": "Run ruff format",
-          "uses": "astral-sh/ruff-action@v3",
-          "with": {
-            "args": "format --check"
-          }
+          "run": "sh ci/ruff-format.sh"
         }
       ]
     }
