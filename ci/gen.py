@@ -2,6 +2,9 @@ import json
 import pathlib
 
 ACTIONS_CHECKOUT = {"name": "Check out repository", "uses": "actions/checkout@v5"}
+PUSH_OR_DISPATCH = (
+    "github.event_name == 'push' || github.event_name == 'workflow_dispatch'"
+)
 THIS_FILE = pathlib.PurePosixPath(
     pathlib.Path(__file__).relative_to(pathlib.Path().resolve())
 )
@@ -58,7 +61,7 @@ def gen_pdf_workflow():
                     {
                         "name": "Upload artifact",
                         "uses": "actions/upload-artifact@v4",
-                        "if": "github.event_name == 'push' || github.event_name == 'workflow_dispatch'",
+                        "if": PUSH_OR_DISPATCH,
                         "with": {"name": "hymns", "path": "hymns*.pdf"},
                     },
                 ],
