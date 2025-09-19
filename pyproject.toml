@@ -1,10 +1,11 @@
 [project]
 name = "hymns"
-version = "0.1.0"
-description = "Add your description here"
+version = "2025.6.0"
+description = "Compile a single PDF containing all the hymns for The Church of Jesus Christ of Latter-day Saints"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "anyio==4.10.0",
     "httpx>=0.28.1",
     "pymupdf>=1.26.1",
     "pypng>=0.20220715.0",
