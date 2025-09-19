@@ -71,6 +71,36 @@ def gen_pdf_workflow():
     gen(content, target)
 
 
+def gen_pypi_release_workflow():
+    target = ".github/workflows/pypi-release.yaml"
+    content = {
+        "env": {
+            "description": f"This workflow ({target}) was generated from {THIS_FILE}"
+        },
+        "name": "Publish the release package to PyPI",
+        "on": {"release": {"types": ["published"]}},
+        "jobs": {
+            "publish": {
+                "name": "Publish the release package to PyPI",
+                "runs-on": "ubuntu-latest",
+                "environment": {
+                    "name": "pypi-release",
+                    "url": "https://pypi.org/p/hymns",
+                },
+                "permissions": {"id-token": "write"},
+                "steps": [
+                    ACTIONS_CHECKOUT,
+                    {
+                        "name": "Build and publish the package",
+                        "run": "sh ci/publish.sh",
+                    },
+                ],
+            }
+        },
+    }
+    gen(content, target)
+
+
 def gen_ruff_workflow():
     target = ".github/workflows/ruff.yaml"
     content = {
@@ -105,6 +135,7 @@ def gen_ruff_workflow():
 def main():
     gen_dependabot()
     gen_pdf_workflow()
+    gen_pypi_release_workflow()
     gen_ruff_workflow()
 
 

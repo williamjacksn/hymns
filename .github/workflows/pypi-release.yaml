@@ -1,0 +1,36 @@
+{
+  "env": {
+    "description": "This workflow (.github/workflows/pypi-release.yaml) was generated from ci/gen.py"
+  },
+  "jobs": {
+    "publish": {
+      "environment": {
+        "name": "pypi-release",
+        "url": "https://pypi.org/p/hymns"
+      },
+      "name": "Publish the release package to PyPI",
+      "permissions": {
+        "id-token": "write"
+      },
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "name": "Check out repository",
+          "uses": "actions/checkout@v5"
+        },
+        {
+          "name": "Build and publish the package",
+          "run": "sh ci/publish.sh"
+        }
+      ]
+    }
+  },
+  "name": "Publish the release package to PyPI",
+  "on": {
+    "release": {
+      "types": [
+        "published"
+      ]
+    }
+  }
+}
