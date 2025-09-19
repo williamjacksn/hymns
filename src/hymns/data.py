@@ -243,9 +243,49 @@ eng = DocData(
             "cj/oh/cjohf082cbp6pbodqau3zm9i9gmi4i3yk8hzdtsy/o_lord_who_gave_thy_life_for_me.pdf",
         ),
         Hymn(
+            1042,
+            "he/86/he86n6sqvar4ysrork5belj8fh33pbo914om83a9/thou_gracious_god_whose_mercy_lends.pdf",
+            False,
+        ),
+        Hymn(
+            1043, "mr/ii/mrii3sw2leivfi17lixh2v43i9pk1q73whpo9szo/help_us_remember.pdf"
+        ),
+        Hymn(
+            1044,
+            "28/35/28358y5wthp49fr4l0y3igtij3fnm2m0crxitxjd/how_did_the_savior_minister.pdf",
+            False,
+        ),
+        Hymn(
+            1045, "wg/82/wg82l7rydm9uzmnhw73gb77kdc6rny669trfwd6h/jesus_is_the_way.pdf"
+        ),
+        Hymn(
+            1046,
+            "ai/ln/ailn1tipdgc7out8odgcag8447od5u017ug3y7ou/can_you_count_the_stars_in_heaven.pdf",
+        ),
+        Hymn(
+            1047,
+            "x5/pa/x5pa1fa3sc3rkd6h679gaoprntum2j3ixl56ukpy/he_cares_for_me.pdf",
+            False,
+        ),
+        Hymn(
+            1048,
+            "k4/hg/k4hg4muphm8mhqj8sb9eypt6yxv0edbb7w0upnlx/our_prayer_to_thee.pdf",
+        ),
+        Hymn(
+            1049,
+            "em/a0/ema0yxz439lqcgqevi4hy75cn9p55vxq9rb8wt4n/joseph_prayed_in_faith.pdf",
+        ),
+        Hymn(1050, "9x/3j/9x3jwrluybs3w8irtxo9e4mxdz39tqayhm7cmbm5/stand_by_me.pdf"),
+        Hymn(
+            1051,
+            "9v/mm/9vmmfbdua2bpgmhufmx51o29itb8soq7bwowhf73/this_day_is_a_good_day_lord.pdf",
+            False,
+        ),
+        Hymn(
             1201,
             "6e/9f/6e9fac3debb511eea036eeeeac1ec84f90cdba38/hail_the_day_that_sees_him_rise.pdf",
             False,
+            True,
         ),
         Hymn(
             1202,
@@ -266,10 +306,16 @@ eng = DocData(
         ),
         Hymn(1206, "35/d0/35d0uc1i13madxx6wzlecpu3347lv09uebqrs75o/were_you_there.pdf"),
         Hymn(
-            1207,
-            "2z/gf/2zgfzovjzxpf440zhrjzixmxrmvih0r8b9h7sdnf/still_still_still.pdf",
+            1207, "2z/gf/2zgfzovjzxpf440zhrjzixmxrmvih0r8b9h7sdnf/still_still_still.pdf"
+        ),
+        Hymn(
+            1208,
+            "cz/23/cz23g18i6a1kufdab9szptg26rq3j0kxhy2nfiod/go_tell_it_on_the_mountain.pdf",
             False,
-            True,
+        ),
+        Hymn(
+            1209,
+            "jr/vl/jrvlt8nplnk8dejytlbilk8ej156pw22nfs7tdrm/little_baby_in_a_manger.pdf",
         ),
     ]
 )

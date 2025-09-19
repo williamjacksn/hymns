@@ -1,11 +1,11 @@
 # Hymns
 
-Use this project to compile a single PDF containing all the hymns in the collection
+Use this package to compile a single PDF containing all the hymns in the collection
 [Hymns&mdash;For Home and Church][a].
 
 [a]: https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church
 
-Running `hymns.py` will perform the following actions:
+Running `uv run hymns` will perform the following actions:
 
 1.  Download PDF files for all hymns.
 2.  Add hymn numbers to the first page of each hymn.
@@ -23,9 +23,9 @@ The default language is English. The default paper size is Letter (8.5 x 11 inch
 You can specify a different language or a different paper size by using `--lang` or `--size` when you run `hymns.py`:
 
 ```shell
-> python hymns.py --lang spa --size a4
+> uv run hymns --lang spa --size a4
 # or abbreviated:
-> python hymns.py -l spa -s a4
+> uv run hymns -l spa -s a4
 ```
 
 Currently supported languages are:
@@ -43,7 +43,7 @@ Currently supported paper sizes are:
 You can generate all possible combinations of language and paper size by running:
 
 ```shell
-> python gen-all.py
+> uv run gen-all-hymns
 ```
 
 ## Cover image
@@ -58,9 +58,9 @@ protected.
 To include the cover image on the first page of the generated file, you can use `--cover` when you run `hymns.py`:
 
 ```shell
-> python hymns.py --cover
+> uv run hymns --cover
 # or abbreviated
-> python hymns.py -c
+> uv run hymns -c
 ```
 
 [b]: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines#title_number143
@@ -86,3 +86,9 @@ copy.
 * Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
 * Print pages 55&ndash;70 to replace pages 55&ndash;58 in your existing copy.
 * Print page 83 to insert at the end of your existing copy.
+
+## Downloaded files
+
+Any files that need to be downloaded to generate the final PDF will be saved in
+a directory named `.local/cache` inside the current directory. If files already
+exist in the cache folder, they will not be downloaded again.

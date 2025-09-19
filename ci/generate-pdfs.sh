@@ -1,2 +1,2 @@
 pip install uv
-uv run gen-all.py
+uv run gen-all-hymns

@@ -1,3 +1,7 @@
+[build-system]
+build-backend = "uv_build"
+requires = ["uv-build>=0.8.19,<0.9.0"]
+
 [project]
 name = "hymns"
 version = "2025.6.0"
@@ -11,9 +15,14 @@ dependencies = [
     "qrcode>=8.2",
 ]
 
+[project.scripts]
+gen-all-hymns = "hymns:gen_all"
+hymns = "hymns:main"
+
 [dependency-groups]
 dev = [
     "ruff>=0.13.1",
+    "uv-build>=0.8.19",
 ]
 
 [tool.ruff.lint]

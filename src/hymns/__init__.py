@@ -1,14 +1,16 @@
 import argparse
+import importlib.metadata
 import io
+import itertools
 import pathlib
 
 import httpx
 import pymupdf
 import qrcode.image.pure
 
-import data
+from . import data
 
-revision = "2025.6.0"
+revision = importlib.metadata.version("hymns")
 src_repo = "https://github.com/williamjacksn/hymns"
 
 # noinspection SpellCheckingInspection
@@ -165,6 +167,16 @@ def build_pdf(language: str, paper_size: str, cover: bool = False):
     final.close()
 
 
-if __name__ == "__main__":
+def gen_all():
+    for lang, size in itertools.product(lang_choices, size_choices):
+        print(f"Generating document for lang:{lang} and size:{size}")
+        build_pdf(lang, size, True)
+
+
+def main():
     args = parse_args()
     build_pdf(args.lang, args.size, args.cover)
+
+
+if __name__ == "__main__":
+    main()
