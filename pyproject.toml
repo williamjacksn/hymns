@@ -4,7 +4,7 @@ requires = ["uv-build>=0.8.19,<0.9.0"]
 
 [project]
 name = "hymns"
-version = "2025.6.0"
+version = "2025.9.0"
 description = "Compile a single PDF containing all the hymns for The Church of Jesus Christ of Latter-day Saints"
 readme = "README.md"
 requires-python = ">=3.13"

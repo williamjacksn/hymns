@@ -72,7 +72,7 @@ wheels = [
 
 [[package]]
 name = "hymns"
-version = "2025.6.0"
+version = "2025.9.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },
@@ -84,6 +84,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "ruff" },
+    { name = "uv-build" },
 ]
 
 [package.metadata]
