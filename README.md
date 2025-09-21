@@ -87,6 +87,12 @@ copy.
 * Print pages 55&ndash;70 to replace pages 55&ndash;58 in your existing copy.
 * Print page 83 to insert at the end of your existing copy.
 
+### 2025.6 &rarr; 2025.9
+
+* Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
+* Print pages 71&ndash;84 to insert after page 70 in your existing copy.
+* Print pages 95&ndash;99 to replace pages 81&ndash;83 in your existing copy.
+
 ## Downloaded files
 
 Any files that need to be downloaded to generate the final PDF will be saved in
