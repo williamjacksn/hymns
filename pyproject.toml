@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "uv_build"
-requires = ["uv-build>=0.8.19,<0.9.0"]
+requires = ["uv-build>=0.8.22,<0.9.0"]
 
 [project]
 name = "hymns"
@@ -21,8 +21,8 @@ hymns = "hymns:main"
 
 [dependency-groups]
 dev = [
-    "ruff>=0.13.1",
-    "uv-build>=0.8.19",
+    "ruff>=0.13.2",
+    "uv-build>=0.8.22",
 ]
 
 [tool.ruff.lint]
