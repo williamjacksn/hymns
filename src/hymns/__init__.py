@@ -43,7 +43,7 @@ def get_qr(text: str):
 
 
 def build_pdf(language: str, paper_size: str, cover: bool = False):
-    doc_data = data.lang_map.get(language, data.eng)
+    doc_data = data.lang_map.get(language, data.eng.doc_data)
 
     page_width, page_height = pymupdf.paper_size(paper_size)
     font = "times-roman"
