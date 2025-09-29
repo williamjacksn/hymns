@@ -6,7 +6,7 @@ PUSH_OR_DISPATCH = (
     "github.event_name == 'push' || github.event_name == 'workflow_dispatch'"
 )
 THIS_FILE = pathlib.PurePosixPath(
-    pathlib.Path(__file__).relative_to(pathlib.Path().resolve())
+    pathlib.Path(__file__).relative_to(pathlib.Path.cwd())
 )
 
 
