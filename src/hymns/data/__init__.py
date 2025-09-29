@@ -1,12 +1,9 @@
+from . import eng, fra, por, spa
 from .base import DocData
-from .eng import eng
-from .fra import fra
-from .por import por
-from .spa import spa
 
 lang_map: dict[str, DocData] = {
-    "eng": eng,
-    "fra": fra,
-    "por": por,
-    "spa": spa,
+    "eng": eng.doc_data,
+    "fra": fra.doc_data,
+    "por": por.doc_data,
+    "spa": spa.doc_data,
 }

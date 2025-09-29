@@ -1,7 +1,9 @@
+# Español (Spanish) language data
+
 from .base import DocData, Hymn
 
 # noinspection SpellCheckingInspection
-spa = DocData(
+doc_data = DocData(
     [
         Hymn(
             1001,

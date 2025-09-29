@@ -1,7 +1,9 @@
+# Français (French) language data
+
 from .base import DocData, Hymn
 
 # noinspection SpellCheckingInspection
-fra = DocData(
+doc_data = DocData(
     [
         Hymn(
             1001,

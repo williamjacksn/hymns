@@ -1,7 +1,9 @@
+# Português (Portuguese) language data
+
 from .base import DocData, Hymn
 
 # noinspection SpellCheckingInspection
-por = DocData(
+doc_data = DocData(
     [
         Hymn(
             1001,
