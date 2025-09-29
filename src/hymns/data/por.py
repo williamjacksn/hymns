@@ -176,9 +176,49 @@ doc_data = DocData(
             "8h/7j/8h7jwm8q2be68hfhxbay979cheh8hps1wcapkacc/o_lord_who_gave_thy_life_for_me.pdf",
         ),
         Hymn(
+            1042,
+            "3j/ab/3jabs0r5ucsyxgso7xfb759u3oby4aigjsda2mmw/thou_gracious_god_whose_mercy_lends.pdf",
+            False,
+        ),
+        Hymn(
+            1043, "sh/j3/shj3a53mday5zm0gi6dfs5i67l7w880h3k04ef8c/help_us_remember.pdf"
+        ),
+        Hymn(
+            1044,
+            "hj/9l/hj9lblkef6y57t3pmh0s6an56zfaswc9zrgm0td5/how_did_the_savior_minister.pdf",
+            False,
+        ),
+        Hymn(
+            1045, "tq/b3/tqb36xjdy41o2w84qevdxyzfun55s6wvhasokkyj/jesus_is_the_way.pdf"
+        ),
+        Hymn(
+            1046,
+            "re/lf/relf01rd60vhkf81ut71y2e96ubf9eooy3v06kbc/can_you_count_the_stars_in_heaven.pdf",
+        ),
+        Hymn(
+            1047,
+            "5g/hs/5ghs0w7gdcuevi71rqyu82tnjhyuv4rhyltx8eej/he_cares_for_me.pdf",
+            False,
+        ),
+        Hymn(
+            1048,
+            "2m/yu/2myu2fx50bb92yd3j2ojifjeicp1rh8j6sds2gp3/our_prayer_to_thee.pdf",
+        ),
+        Hymn(
+            1049,
+            "lz/41/lz41bgol3efryinliy07s0mfhvu1npdizqfwkj1c/joseph_prayed_in_faith.pdf",
+        ),
+        Hymn(1050, "6s/uw/6suwc45qggeh6wmsbg4bqe4548idlqk4a3hu721b/stand_by_me.pdf"),
+        Hymn(
+            1051,
+            "3x/w8/3xw87dpu6e60tcj805pi2ld5vvv4825wncpgg0hu/this_day_is_a_good_day_lord.pdf",
+            False,
+        ),
+        Hymn(
             1201,
             "45/87/458703350cb311efaf07eeeeac1e99beb8fedf6e/hail_the_day_that_sees_him_rise.pdf",
             False,
+            True,
         ),
         Hymn(
             1202,
@@ -199,10 +239,16 @@ doc_data = DocData(
         ),
         Hymn(1206, "s9/ru/s9ru99vxqws6c6nxrvueojhgstv6jnzekdolfe50/were_you_there.pdf"),
         Hymn(
-            1207,
-            "ue/ih/ueihr5b8g7df8p38iju29vs5qky39wsnc0dvigeo/still_still_still.pdf",
+            1207, "ue/ih/ueihr5b8g7df8p38iju29vs5qky39wsnc0dvigeo/still_still_still.pdf"
+        ),
+        Hymn(
+            1208,
+            "rk/4d/rk4drariukhnsrxdkhlnwj93cx31ym4kod589qoj/go_tell_it_on_the_mountain.pdf",
             False,
-            True,
+        ),
+        Hymn(
+            1209,
+            "bt/86/bt86shn0r4z6pe9d4a8xlyekxp2iiiz03h4u4hrg/little_baby_in_a_manger.pdf",
         ),
     ],
     title="Hinos \x97 Para o Lar e para a Igreja",
