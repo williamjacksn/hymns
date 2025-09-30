@@ -84,13 +84,14 @@ def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
             page_width * 0.9,
             (page_width * 0.9) + (page_width * 0.1),
         )
-        cover = pathlib.Path(".local/cache/cover.jpg")
+        cover = pathlib.Path(".local/cache/cover.jpg").resolve()
         if not cover.exists():
             cover.parent.mkdir(parents=True, exist_ok=True)
             print(f"Downloading {cover_url}")
+            print(f" -> {cover}")
             img_response = httpx.get(cover_url)
             cover.write_bytes(img_response.content)
-        pymupdf.utils.insert_image(page, img_rect, filename=cover.resolve())
+        pymupdf.utils.insert_image(page, img_rect, filename=cover)
 
     text = f"\n{doc_data.hymn_link_text}"
     pymupdf.utils.insert_textbox(
@@ -136,10 +137,13 @@ def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
 
     # hymn pages
     for hymn in doc_data.hymns:
-        cache_target = pathlib.Path(f".local/cache/{doc_data.lang}/{hymn.number}.pdf")
+        cache_target = pathlib.Path(
+            f".local/cache/{doc_data.lang}/{hymn.number}.pdf"
+        ).resolve()
         if not cache_target.exists():
             url = hymn.pdf_url
             print(f"Downloading {url}")
+            print(f" -> {cache_target}")
             response = httpx.get(url)
             cache_target.parent.mkdir(parents=True, exist_ok=True)
             cache_target.write_bytes(response.content)
