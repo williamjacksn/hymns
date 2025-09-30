@@ -85,7 +85,9 @@ def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
             (page_width * 0.9) + (page_width * 0.1),
         )
         cover = pathlib.Path(".local/cache/cover.jpg").resolve()
-        if not cover.exists():
+        if cover.exists():
+            print(f"Using cache: {cover}")
+        else:
             cover.parent.mkdir(parents=True, exist_ok=True)
             print(f"Downloading {cover_url}")
             print(f" -> {cover}")
@@ -140,7 +142,9 @@ def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
         cache_target = pathlib.Path(
             f".local/cache/{doc_data.lang}/{hymn.number}.pdf"
         ).resolve()
-        if not cache_target.exists():
+        if cache_target.exists():
+            print(f"Using cache: {cache_target}")
+        else:
             url = hymn.pdf_url
             print(f"Downloading {url}")
             print(f" -> {cache_target}")
