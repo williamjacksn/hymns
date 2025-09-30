@@ -1,15 +1,15 @@
 # Hymns
 
-Use this package to compile a single PDF containing all the hymns in the collection
-[Hymns&mdash;For Home and Church][a].
+Compile a single PDF containing all the hymns in the collection
+[&ldquo;Hymns&mdash;For Home and Church&rdquo;][a].
 
 [a]: https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church
 
 ## Using this tool
 
-You do not need to download the source code repository to use this package. The
-recommended way to use this package is to run it through `uv`. [Install `uv`][b] on your
-computer and then run:
+You do not need to download the source code repository to use this tool. The recommended
+way to use this tool is to run it through `uv`. [Install `uv`][b] on your computer and
+then run:
 
 [b]: https://docs.astral.sh/uv/getting-started/installation/
 
@@ -29,12 +29,21 @@ This will perform the following actions:
 
 The resulting PDF is designed to be printed double-sided.
 
+## Downloaded files
+
+Any files that need to be downloaded to generate the final PDF will be saved in
+a directory named `.local/cache` inside the current directory. If files already
+exist in the cache folder, they will not be downloaded again.
+
+You can safely delete this folder and everything in it. The next time you use this tool,
+the files will be downloaded again.
+
 ## Alternate languages and paper sizes
 
 The default language is English. The default paper size is Letter (8.5 x 11 inches).
 
 You can specify a different language or a different paper size by using `--lang` or
-`--size` when you run `uvx hymns`:
+`--size` when you run the tool:
 
 ```shell
 > uvx hymns --lang spa --size a4
@@ -58,27 +67,6 @@ You can generate all possible combinations of language and paper size by running
 
 ```shell
 > uvx --from hymns gen-all-hymns
-```
-
-## Cover image
-
-The official cover image for this new collection of hymns as found at
-[the Church&#x02bc;s website][a] is legally protected.
-
-> The Church&#x02bc;s wordmark and symbol are to be used only as approved by the First
-> Presidency and Quorum of the Twelve Apostles. They may not be used as decorative
-> elements. Nor may they be used in any personal, commercial, or promotional way.
-> ([_General Handbook_, 38.8.8][c])
-
-[c]: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines#title_number143
-
-To include the cover image on the first page of the generated file, you can use
-`--cover` when you run `uvx hymns`:
-
-```shell
-> uvx hymns --cover
-# or abbreviated
-> uvx hymns -c
 ```
 
 ## Updating a printed copy
@@ -108,12 +96,3 @@ or changed pages to update your copy.
 * Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
 * Print pages 71&ndash;84 to insert after page 70 in your existing copy.
 * Print pages 95&ndash;99 to replace pages 81&ndash;83 in your existing copy.
-
-## Downloaded files
-
-Any files that need to be downloaded to generate the final PDF will be saved in
-a directory named `.local/cache` inside the current directory. If files already
-exist in the cache folder, they will not be downloaded again.
-
-You can safely delete this folder and everything in it. The next time you use this tool,
-the files will be downloaded again.

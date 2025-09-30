@@ -23,14 +23,28 @@ size_choices = ["a4", "letter"]
 class Args:
     lang: str = "eng"
     size: str = "letter"
-    cover: bool = False
 
 
 def parse_args() -> Args:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-l", "--lang", default="eng", choices=lang_choices)
-    parser.add_argument("-s", "--size", default="letter", choices=size_choices)
-    parser.add_argument("-c", "--cover", action="store_true")
+    parser = argparse.ArgumentParser(
+        description="Compile a single PDF containing all the hymns in the collection "
+        '"Hymns—For Home and Church".',
+        epilog=f"Visit {src_repo} for more information.",
+    )
+    parser.add_argument(
+        "-l",
+        "--lang",
+        default="eng",
+        choices=lang_choices,
+        help="language (default: eng)",
+    )
+    parser.add_argument(
+        "-s",
+        "--size",
+        default="letter",
+        choices=size_choices,
+        help="paper size (default: letter)",
+    )
     ns = Args()
     return parser.parse_args(namespace=ns)
 
@@ -42,7 +56,7 @@ def get_qr(text: str) -> io.BytesIO:
     return qr_stream
 
 
-def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
+def build_pdf(language: str, paper_size: str) -> None:
     doc_data = data.lang_map.get(language, data.eng.doc_data)
 
     page_width, page_height = pymupdf.paper_size(paper_size)
@@ -77,23 +91,22 @@ def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
         fontsize=doc_data.title_font_size(paper_size),
     )
 
-    if cover:
-        img_rect = (
-            page_width * 0.1,
-            page_width * 0.2,
-            page_width * 0.9,
-            (page_width * 0.9) + (page_width * 0.1),
-        )
-        cover = pathlib.Path(".local/cache/cover.jpg").resolve()
-        if cover.exists():
-            print(f"Using cache: {cover}")
-        else:
-            cover.parent.mkdir(parents=True, exist_ok=True)
-            print(f"Downloading {cover_url}")
-            print(f" -> {cover}")
-            img_response = httpx.get(cover_url)
-            cover.write_bytes(img_response.content)
-        pymupdf.utils.insert_image(page, img_rect, filename=cover)
+    img_rect = (
+        page_width * 0.1,
+        page_width * 0.2,
+        page_width * 0.9,
+        (page_width * 0.9) + (page_width * 0.1),
+    )
+    cover = pathlib.Path(".local/cache/cover.jpg").resolve()
+    if cover.exists():
+        print(f"Using cache: {cover}")
+    else:
+        cover.parent.mkdir(parents=True, exist_ok=True)
+        print(f"Downloading {cover_url}")
+        print(f" -> {cover}")
+        img_response = httpx.get(cover_url)
+        cover.write_bytes(img_response.content)
+    pymupdf.utils.insert_image(page, img_rect, filename=cover)
 
     text = f"\n{doc_data.hymn_link_text}"
     pymupdf.utils.insert_textbox(
@@ -178,12 +191,12 @@ def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
 def gen_all() -> None:
     for lang, size in itertools.product(lang_choices, size_choices):
         print(f"Generating document for lang:{lang} and size:{size}")
-        build_pdf(lang, size, True)
+        build_pdf(lang, size)
 
 
 def main() -> None:
     args = parse_args()
-    build_pdf(args.lang, args.size, args.cover)
+    build_pdf(args.lang, args.size)
 
 
 if __name__ == "__main__":
