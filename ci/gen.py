@@ -10,14 +10,14 @@ THIS_FILE = pathlib.PurePosixPath(
 )
 
 
-def gen(content: dict, target: str):
+def gen(content: dict, target: str) -> None:
     pathlib.Path(target).parent.mkdir(parents=True, exist_ok=True)
     pathlib.Path(target).write_text(
         json.dumps(content, indent=2, sort_keys=True), newline="\n"
     )
 
 
-def gen_dependabot():
+def gen_dependabot() -> None:
     target = ".github/dependabot.yaml"
     content = {
         "version": 2,
@@ -34,7 +34,7 @@ def gen_dependabot():
     gen(content, target)
 
 
-def gen_pdf_workflow():
+def gen_pdf_workflow() -> None:
     target = ".github/workflows/gen-pdf.yaml"
     content = {
         "env": {
@@ -71,7 +71,7 @@ def gen_pdf_workflow():
     gen(content, target)
 
 
-def gen_pypi_release_workflow():
+def gen_pypi_release_workflow() -> None:
     target = ".github/workflows/pypi-release.yaml"
     content = {
         "env": {
@@ -101,7 +101,7 @@ def gen_pypi_release_workflow():
     gen(content, target)
 
 
-def gen_ruff_workflow():
+def gen_ruff_workflow() -> None:
     target = ".github/workflows/ruff.yaml"
     content = {
         "name": "Ruff",
@@ -132,7 +132,7 @@ def gen_ruff_workflow():
     gen(content, target)
 
 
-def main():
+def main() -> None:
     gen_dependabot()
     gen_pdf_workflow()
     gen_pypi_release_workflow()

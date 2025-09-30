@@ -35,14 +35,14 @@ def parse_args() -> Args:
     return parser.parse_args(namespace=ns)
 
 
-def get_qr(text: str):
+def get_qr(text: str) -> io.BytesIO:
     qr = qrcode.make(text, image_factory=qrcode.image.pure.PyPNGImage)
     qr_stream = io.BytesIO()
     qr.save(qr_stream)
     return qr_stream
 
 
-def build_pdf(language: str, paper_size: str, cover: bool = False):
+def build_pdf(language: str, paper_size: str, cover: bool = False) -> None:
     doc_data = data.lang_map.get(language, data.eng.doc_data)
 
     page_width, page_height = pymupdf.paper_size(paper_size)
@@ -167,13 +167,13 @@ def build_pdf(language: str, paper_size: str, cover: bool = False):
     final.close()
 
 
-def gen_all():
+def gen_all() -> None:
     for lang, size in itertools.product(lang_choices, size_choices):
         print(f"Generating document for lang:{lang} and size:{size}")
         build_pdf(lang, size, True)
 
 
-def main():
+def main() -> None:
     args = parse_args()
     build_pdf(args.lang, args.size, args.cover)
 

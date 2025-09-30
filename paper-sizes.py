@@ -7,9 +7,9 @@ width_col = 5
 height_col = 6
 
 
-def print_line(format: str, width: str, height: str):
+def print_line(fmt: str, width: str, height: str) -> None:
     print(
-        format.rjust(format_col),
+        fmt.rjust(format_col),
         "|",
         width.rjust(width_col),
         "|",
