@@ -15,6 +15,10 @@ dependencies = [
     "qrcode>=8.2",
 ]
 
+[project.urls]
+"Homepage" = "https://github.com/williamjacksn/hymns"
+"Issues" = "https://github.com/williamjacksn/hymns/issues"
+
 [project.scripts]
 gen-all-hymns = "hymns:gen_all"
 hymns = "hymns:main"
