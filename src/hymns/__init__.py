@@ -75,7 +75,7 @@ def build_pdf(language: str, paper_size: str) -> None:
     )
 
     # cover page
-    page = pymupdf.utils.new_page(final, width=page_width, height=page_height)
+    page = final.new_page(width=page_width, height=page_height)
     title_rect = (
         page_width * 0.1,
         page_height * 0.05,
@@ -83,8 +83,7 @@ def build_pdf(language: str, paper_size: str) -> None:
         page_height * 0.15,
     )
     # left aligned due to the extra wide \x97 char which messes up center algo
-    pymupdf.utils.insert_textbox(
-        page,
+    page.insert_textbox(
         title_rect,
         doc_data.title,
         fontname=font,
@@ -106,49 +105,27 @@ def build_pdf(language: str, paper_size: str) -> None:
         print(f" -> {cover}")
         img_response = httpx.get(cover_url)
         cover.write_bytes(img_response.content)
-    pymupdf.utils.insert_image(page, img_rect, filename=cover)
+    page.insert_image(img_rect, filename=cover)
 
     text = f"\n{doc_data.hymn_link_text}"
-    pymupdf.utils.insert_textbox(
-        page,
-        link_rect,
-        text,
-        fontname=font,
-        fontsize=12,
-        align=pymupdf.TEXT_ALIGN_CENTER,
+    page.insert_textbox(
+        link_rect, text, fontname=font, fontsize=12, align=pymupdf.TEXT_ALIGN_CENTER
     )
-    pymupdf.utils.insert_link(
-        page,
-        {
-            "from": link_rect,
-            "kind": pymupdf.LINK_URI,
-            "uri": doc_data.hymns_homepage,
-        },
+    page.insert_link(
+        {"from": link_rect, "kind": pymupdf.LINK_URI, "uri": doc_data.hymns_homepage}
     )
 
-    pymupdf.utils.insert_image(page, qr_rect, stream=get_qr(doc_data.hymns_homepage))
+    page.insert_image(qr_rect, stream=get_qr(doc_data.hymns_homepage))
 
     # github link page
-    page = pymupdf.utils.new_page(final, width=page_width, height=page_height)
+    page = final.new_page(width=page_width, height=page_height)
     text = f"\n{doc_data.rev_text} {revision}"
-    pymupdf.utils.insert_textbox(
-        page,
-        link_rect,
-        text,
-        fontname=font,
-        fontsize=8,
-        align=pymupdf.TEXT_ALIGN_CENTER,
+    page.insert_textbox(
+        link_rect, text, fontname=font, fontsize=8, align=pymupdf.TEXT_ALIGN_CENTER
     )
-    pymupdf.utils.insert_link(
-        page,
-        {
-            "from": link_rect,
-            "kind": pymupdf.LINK_URI,
-            "uri": src_repo,
-        },
-    )
+    page.insert_link({"from": link_rect, "kind": pymupdf.LINK_URI, "uri": src_repo})
 
-    pymupdf.utils.insert_image(page, qr_rect, stream=get_qr(src_repo))
+    page.insert_image(qr_rect, stream=get_qr(src_repo))
 
     # hymn pages
     for hymn in doc_data.hymns:
@@ -166,21 +143,19 @@ def build_pdf(language: str, paper_size: str) -> None:
             cache_target.write_bytes(response.content)
         doc = pymupdf.Document(cache_target)
         if hymn.blank_before:
-            pymupdf.utils.new_page(final, width=page_width, height=page_height)
+            final.new_page(width=page_width, height=page_height)
         for page in doc:
             if page.number + 1 in hymn.excluded_pages:
                 continue
-            new_page = pymupdf.utils.new_page(
-                final, width=page_width, height=page_height
-            )
-            pymupdf.utils.show_pdf_page(new_page, new_page.rect, doc, page.number)
+            new_page = final.new_page(width=page_width, height=page_height)
+            new_page.show_pdf_page(new_page.rect, doc, page.number)
             if page.number == 0:
                 point = (
                     page_width * hymn.x(paper_size),
                     page_height * hymn.y(paper_size),
                 )
-                pymupdf.utils.insert_text(
-                    new_page, point, str(hymn.number), fontsize=20, fontname=font
+                new_page.insert_text(
+                    point, str(hymn.number), fontsize=20, fontname=font
                 )
         doc.close()
 
