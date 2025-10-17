@@ -9,7 +9,7 @@
       "directory": "/",
       "package-ecosystem": "github-actions",
       "schedule": {
-        "interval": "daily"
+        "interval": "weekly"
       }
     },
     {
@@ -21,7 +21,7 @@
       "directory": "/",
       "package-ecosystem": "uv",
       "schedule": {
-        "interval": "daily"
+        "interval": "weekly"
       }
     }
   ],
