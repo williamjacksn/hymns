@@ -1,52 +1,34 @@
-{
-  "env": {
-    "description": "This workflow (.github/workflows/gen-pdf.yaml) was generated from ci/gen.py"
-  },
-  "jobs": {
-    "gen-pdfs": {
-      "name": "Generate PDFs",
-      "runs-on": "ubuntu-latest",
-      "steps": [
-        {
-          "name": "Check out repository",
-          "uses": "actions/checkout@v5"
-        },
-        {
-          "name": "Configure Actions cache for downloaded content",
-          "uses": "actions/cache@v4",
-          "with": {
-            "key": "download-cache",
-            "path": ".local"
-          }
-        },
-        {
-          "name": "Generate PDFs",
-          "run": "sh ci/generate-pdfs.sh"
-        },
-        {
-          "if": "github.event_name == 'push' || github.event_name == 'workflow_dispatch'",
-          "name": "Upload artifact",
-          "uses": "actions/upload-artifact@v4",
-          "with": {
-            "name": "hymns",
-            "path": "hymns*.pdf"
-          }
-        }
-      ]
-    }
-  },
-  "name": "Generate PDFs",
-  "on": {
-    "pull_request": {
-      "branches": [
-        "main"
-      ]
-    },
-    "push": {
-      "branches": [
-        "main"
-      ]
-    },
-    "workflow_dispatch": {}
-  }
-}
+name: Generate PDFs
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  gen-pdfs:
+    name: Generate PDFs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Actions cache for downloaded content
+        uses: actions/cache@v4
+        with:
+          key: download-cache
+          path: .local
+
+      - name: Generate PDFs
+        run: sh ci/generate-pdfs.sh
+
+      - name: Upload artifact
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: hymns
+          path: hymns*.pdf

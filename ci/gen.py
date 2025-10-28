@@ -34,43 +34,6 @@ def gen_dependabot() -> None:
     gen(content, target)
 
 
-def gen_pdf_workflow() -> None:
-    target = ".github/workflows/gen-pdf.yaml"
-    content = {
-        "env": {
-            "description": f"This workflow ({target}) was generated from {THIS_FILE}",
-        },
-        "name": "Generate PDFs",
-        "on": {
-            "pull_request": {"branches": ["main"]},
-            "push": {"branches": ["main"]},
-            "workflow_dispatch": {},
-        },
-        "jobs": {
-            "gen-pdfs": {
-                "name": "Generate PDFs",
-                "runs-on": "ubuntu-latest",
-                "steps": [
-                    ACTIONS_CHECKOUT,
-                    {
-                        "name": "Configure Actions cache for downloaded content",
-                        "uses": "actions/cache@v4",
-                        "with": {"key": "download-cache", "path": ".local"},
-                    },
-                    {"name": "Generate PDFs", "run": "sh ci/generate-pdfs.sh"},
-                    {
-                        "name": "Upload artifact",
-                        "uses": "actions/upload-artifact@v4",
-                        "if": PUSH_OR_DISPATCH,
-                        "with": {"name": "hymns", "path": "hymns*.pdf"},
-                    },
-                ],
-            }
-        },
-    }
-    gen(content, target)
-
-
 def gen_pypi_release_workflow() -> None:
     target = ".github/workflows/pypi-release.yaml"
     content = {
@@ -134,7 +97,6 @@ def gen_ruff_workflow() -> None:
 
 def main() -> None:
     gen_dependabot()
-    gen_pdf_workflow()
     gen_pypi_release_workflow()
     gen_ruff_workflow()
 
