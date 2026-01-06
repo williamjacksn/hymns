@@ -37,13 +37,13 @@ class Hymn:
 
     def x(self, paper_size: str = "letter") -> float:
         if paper_size in self.offsets:
-            return self.offsets.get(paper_size)[0]
+            return self.offsets[paper_size][0]
         else:
             return DefaultOffsets.x(self.num_on_left, paper_size)
 
     def y(self, paper_size: str = "letter") -> float:
         if paper_size in self.offsets:
-            return self.offsets.get(paper_size)[1]
+            return self.offsets[paper_size][1]
         else:
             return DefaultOffsets.y(paper_size)
 
@@ -63,7 +63,7 @@ class DocData:
 
     def title_font_size(self, paper_size: str) -> int:
         if paper_size in self.t_font_size:
-            return self.t_font_size.get(paper_size)
+            return self.t_font_size[paper_size]
         if paper_size == "a4":
             return 37
         return 38

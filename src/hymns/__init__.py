@@ -11,7 +11,8 @@ import qrcode.image.pure
 from . import data
 
 revision = importlib.metadata.version("hymns")
-src_repo = importlib.metadata.metadata("hymns").get("Project-URL").split(", ")[1]
+pkg_meta = importlib.metadata.metadata("hymns")
+src_repo = pkg_meta["Project-URL"].split(", ")[1]
 
 # noinspection SpellCheckingInspection
 cover_url = f"{data.h}/37/10/37108f66ca8411eeba3aeeeeac1ea51f5750182f/sacred_music.jpeg"
