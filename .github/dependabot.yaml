@@ -1,29 +1,10 @@
-{
-  "updates": [
-    {
-      "allow": [
-        {
-          "dependency-type": "all"
-        }
-      ],
-      "directory": "/",
-      "package-ecosystem": "github-actions",
-      "schedule": {
-        "interval": "weekly"
-      }
-    },
-    {
-      "allow": [
-        {
-          "dependency-type": "all"
-        }
-      ],
-      "directory": "/",
-      "package-ecosystem": "uv",
-      "schedule": {
-        "interval": "weekly"
-      }
-    }
-  ],
-  "version": 2
-}
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly

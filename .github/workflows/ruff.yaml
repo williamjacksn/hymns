@@ -1,51 +1,30 @@
-{
-  "env": {
-    "description": "This workflow (.github/workflows/ruff.yaml) was generated from ci/gen.py"
-  },
-  "jobs": {
-    "ruff-check": {
-      "name": "Run ruff check",
-      "runs-on": "ubuntu-latest",
-      "steps": [
-        {
-          "name": "Check out repository",
-          "uses": "actions/checkout@v6"
-        },
-        {
-          "name": "Run ruff check",
-          "run": "sh ci/ruff-check.sh"
-        }
-      ]
-    },
-    "ruff-format": {
-      "name": "Run ruff format",
-      "runs-on": "ubuntu-latest",
-      "steps": [
-        {
-          "name": "Check out repository",
-          "uses": "actions/checkout@v6"
-        },
-        {
-          "name": "Run ruff format",
-          "run": "sh ci/ruff-format.sh"
-        }
-      ]
-    }
-  },
-  "name": "Ruff",
-  "on": {
-    "pull_request": {
-      "branches": [
-        "main"
-      ]
-    },
-    "push": {
-      "branches": [
-        "main"
-      ]
-    }
-  },
-  "permissions": {
-    "contents": "read"
-  }
-}
+name: Ruff
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  ruff-check:
+    name: Run ruff check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Run ruff check
+        run: sh ci/ruff-check.sh
+  ruff-format:
+    name: Run ruff format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Run ruff format
+        run: sh ci/ruff-format.sh
