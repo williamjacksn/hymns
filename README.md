@@ -19,13 +19,13 @@ uvx hymns
 
 This will perform the following actions:
 
-1.  Download PDF files for all hymns into a folder named `.local/cache` in the current
-    directory.
-2.  Add hymn numbers to the first page of each hymn, in the correct corner.
-3.  Arrange all hymns into a single PDF file.
-4.  Add blank pages if necessary to keep two-page hymns in a single spread.
-5.  Write the combined PDF file to `hymns-eng-letter.pdf` in the current directory. If
-    `hymns-eng-letter.pdf` already exists, it will be overwritten.
+1. Download PDF files for all hymns into a folder named `.local/cache` in the current
+   directory.
+2. Add hymn numbers to the first page of each hymn, in the correct corner.
+3. Arrange all hymns into a single PDF file.
+4. Add blank pages if necessary to keep two-page hymns in a single spread.
+5. Write the combined PDF file to `hymns-eng-letter.pdf` in the current directory. If
+   `hymns-eng-letter.pdf` already exists, it will be overwritten.
 
 The resulting PDF is designed to be printed double-sided.
 
@@ -96,3 +96,9 @@ or changed pages to update your copy.
 * Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
 * Print pages 71&ndash;84 to insert after page 70 in your existing copy.
 * Print pages 95&ndash;99 to replace pages 81&ndash;83 in your existing copy.
+
+### 2025.9 &rarr; 2026.2
+
+* Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
+* Print pages 83&ndash;102 to replace pages 83&ndash;84 in your existing copy.
+* Print page 119 to insert at the end of your existing copy.

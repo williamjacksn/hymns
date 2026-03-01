@@ -214,6 +214,45 @@ doc_data = DocData(
             "3x/w8/3xw87dpu6e60tcj805pi2ld5vvv4825wncpgg0hu/this_day_is_a_good_day_lord.pdf",
             False,
         ),
+        Hymn(1052, "ya/8e/ya8edexcnbdttampvtvhbeorc4rh8rv0p3ky3eoy/joyfully_bound.pdf"),
+        Hymn(1053, "5h/fs/5hfseozuteuk1ui41ikpo5r9ytpvj68rb03brky0/my_covenants.pdf"),
+        Hymn(
+            1054,
+            "g9/a6/g9a6yoh1mwfyqvhnjua6r70r4uptvwjqbl1jz10k/when_i_am_baptized.pdf",
+        ),
+        Hymn(
+            1055,
+            "fj/m2/fjm2ukwvr61gmebhlwxxxghfk3xpp77fonc5ptwj/the_power_of_the_holy_ghost.pdf",
+            False,
+        ),
+        Hymn(
+            1056,
+            "ue/jb/uejb2pfcqpb1o97q0vilal2p2arh21yzajp5hck9/elijah_and_the_still_small_voice.pdf",
+        ),
+        Hymn(
+            1057,
+            "qv/e8/qve8i8exfqo73efu9kmeqyxon20vuhiii77ksf4h/jesus_is_my_shepherd.pdf",
+        ),
+        Hymn(
+            1058,
+            "qp/c4/qpc4zcoshm1xcpauzfuiczou01n5rl467v0yj3bj/my_song_in_the_night.pdf",
+        ),
+        Hymn(
+            1059,
+            "yr/1w/yr1wyoef2dnoothik6upal8xogcm59x7eqvsyz2q/this_is_my_fathers_world.pdf",
+            False,
+        ),
+        Hymn(1060, "l5/xk/l5xk3rxjrqs1v7wrwonbhoydzfly7j7pi3vwp8nn/build_an_ark.pdf"),
+        Hymn(
+            1061,
+            "xl/ny/xlnyqfgpk97j14bqnismpkfu9eecpvaxyxrb4lgr/love_will_bless_our_home.pdf",
+        ),
+        Hymn(
+            1062,
+            "jr/4z/jr4z1tcjaz4qrsrttr3cxv18bsg2ht83d2o2cwrt/lord_accept_our_humble_fast.pdf",
+            False,
+            True,
+        ),
         Hymn(
             1201,
             "45/87/458703350cb311efaf07eeeeac1e99beb8fedf6e/hail_the_day_that_sees_him_rise.pdf",
@@ -249,6 +288,12 @@ doc_data = DocData(
         Hymn(
             1209,
             "bt/86/bt86shn0r4z6pe9d4a8xlyekxp2iiiz03h4u4hrg/little_baby_in_a_manger.pdf",
+        ),
+        Hymn(
+            1210,
+            "9r/g9/9rg99vmd90b2cnepn9yedr60fqhibrxkui2b00qa/long_ago_within_a_garden.pdf",
+            False,
+            True,
         ),
     ],
     title="Hinos \x97 Para o Lar e para a Igreja",

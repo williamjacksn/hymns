@@ -214,6 +214,45 @@ doc_data = DocData(
             "9v/mm/9vmmfbdua2bpgmhufmx51o29itb8soq7bwowhf73/this_day_is_a_good_day_lord.pdf",
             False,
         ),
+        Hymn(1052, "ao/kv/aokvh8g2pecj1sgzgstqe4y4gduwqib18k9vwzeo/joyfully_bound.pdf"),
+        Hymn(1053, "zo/20/zo20opvgyis7eehmsokk5t80b76pooa081oacbom/my_covenants.pdf"),
+        Hymn(
+            1054,
+            "4w/tt/4wtt473id77vh49e08g3xet3z5zodkxygr6o4nr5/when_i_am_baptized.pdf",
+        ),
+        Hymn(
+            1055,
+            "k7/sd/k7sd2lhh79v6bgpnbn6hci7e3jwsrp2be5qe1dks/the_power_of_the_holy_ghost.pdf",
+            False,
+        ),
+        Hymn(
+            1056,
+            "sw/ux/swuxytwym6d5zmvlgx9exm1h000gmoy2o67pbdh5/elijah_and_the_still_small_voice.pdf",
+        ),
+        Hymn(
+            1057,
+            "4o/ev/4oevn0tk1ytediut2qnfjk3lx2kjrjkk5gdfa1s0/jesus_is_my_shepherd.pdf",
+        ),
+        Hymn(
+            1058,
+            "pf/8v/pf8vsu30hm4ivozorl4ehi1rfut46zg0ar2zdkee/my_song_in_the_night.pdf",
+        ),
+        Hymn(
+            1059,
+            "lz/kv/lzkv6hth10byodd00dltabzz1ydz1luwmk6j8gqq/this_is_my_fathers_world.pdf",
+            False,
+        ),
+        Hymn(1060, "gz/2u/gz2uo50162okimt0tzpbl2rz1dnr5a7scerl0aje/build_an_ark.pdf"),
+        Hymn(
+            1061,
+            "lf/ab/lfab4f9t84o1la0o9fwlr94z81kvw9jobiz9hr9l/love_will_bless_our_home.pdf",
+        ),
+        Hymn(
+            1062,
+            "6z/j3/6zj3hslel5vcifj8stgh8pjzd8u0yanhnliy5sdn/lord_accept_our_humble_fast.pdf",
+            False,
+            True,
+        ),
         Hymn(
             1201,
             "6e/9f/6e9fac3debb511eea036eeeeac1ec84f90cdba38/hail_the_day_that_sees_him_rise.pdf",
@@ -249,6 +288,12 @@ doc_data = DocData(
         Hymn(
             1209,
             "jr/vl/jrvlt8nplnk8dejytlbilk8ej156pw22nfs7tdrm/little_baby_in_a_manger.pdf",
+        ),
+        Hymn(
+            1210,
+            "07/3j/073ji68p7vnpfat1zz8pe23x24fgrq5blsx61wi6/long_ago_within_a_garden.pdf",
+            False,
+            True,
         ),
     ]
 )

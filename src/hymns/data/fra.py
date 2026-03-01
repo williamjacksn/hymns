@@ -215,6 +215,45 @@ doc_data = DocData(
             "zs/xd/zsxdanrrdakk4txbfoatybjutbwdy2gx68w6dyxu/this_day_is_a_good_day_lord.pdf",
             False,
         ),
+        Hymn(1052, "l2/cw/l2cwu1308q6o16dbjf8lus3rkrnwd7p0hugnfnka/joyfully_bound.pdf"),
+        Hymn(1053, "rb/c8/rbc86zqdplnmxafoh9yy4bwbdl5oo0obgqqdeuwe/my_covenants.pdf"),
+        Hymn(
+            1054,
+            "tm/3t/tm3tyy3kblubupr0hk2mqnanr3unek2pv61kpjiv/when_i_am_baptized.pdf",
+        ),
+        Hymn(
+            1055,
+            "z9/ev/z9evcsqzkfxt9ljm7h6wekgnd9nhpxvzfun69m3v/the_power_of_the_holy_ghost.pdf",
+            False,
+        ),
+        Hymn(
+            1056,
+            "j1/ym/j1ymsw9vfe9m40y3kujky0asrksnwreuchbbsd8h/elijah_and_the_still_small_voice.pdf",
+        ),
+        Hymn(
+            1057,
+            "bo/yp/boyp1gc0zwumnlhxntkr3hk9vludfars2gf2o6uu/jesus_is_my_shepherd.pdf",
+        ),
+        Hymn(
+            1058,
+            "5a/j2/5aj2fhx410w43ylrdgtm7tr7huemclx5lpceyzi5/my_song_in_the_night.pdf",
+        ),
+        Hymn(
+            1059,
+            "tz/3u/tz3ucsl1lizwo2oonguumczhwboec2wiwidihxcq/this_is_my_fathers_world.pdf",
+            False,
+        ),
+        Hymn(1060, "zv/nu/zvnun05d70evy9s1p6jtoety8fmbiekvmua3f3x6/build_an_ark.pdf"),
+        Hymn(
+            1061,
+            "ka/0i/ka0id8t501qsv493vbt31y4tpl20a0hp6ap4vqlx/love_will_bless_our_home.pdf",
+        ),
+        Hymn(
+            1062,
+            "ft/5o/ft5oda159t1r3yvb9ui55gjpd0do7rzwft6zq3xg/lord_accept_our_humble_fast.pdf",
+            False,
+            True,
+        ),
         Hymn(
             1201,
             "24/78/2478120a097f11efae13eeeeac1e705949a29d62/hail_the_day_that_sees_him_rise.pdf",
@@ -251,6 +290,12 @@ doc_data = DocData(
         Hymn(
             1209,
             "t7/ox/t7oxm5ago7mrb3bh1dpi8on5qnuqxq3o8f7ezxv5/little_baby_in_a_manger.pdf",
+        ),
+        Hymn(
+            1210,
+            "w5/5g/w55g1it5513ohmm6aofbrd0ug29nrxya4f7tcks1/long_ago_within_a_garden.pdf",
+            False,
+            True,
         ),
     ],
     title="Cantiques \x96 Pour le foyer et l\x92église",
