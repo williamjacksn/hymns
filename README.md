@@ -1,7 +1,7 @@
 # Hymns
 
 Compile a single PDF containing all the hymns in the collection
-[&ldquo;Hymns&mdash;For Home and Church&rdquo;][a].
+[&ldquo;Hymns for Home and Church&rdquo;][a].
 
 [a]: https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church
 

@@ -51,7 +51,7 @@ class Hymn:
 @dataclasses.dataclass
 class DocData:
     hymns: list[Hymn]
-    title: str = "Hymns\x97For Home and Church"
+    title: str = "Hymns for Home and Church"
     t_font_size: dict[str, int] = dataclasses.field(default_factory=dict)
     hymn_link_text: str = "Scan this code to access these hymns digitally"
     rev_text: str = "Revision"
@@ -65,5 +65,5 @@ class DocData:
         if paper_size in self.t_font_size:
             return self.t_font_size[paper_size]
         if paper_size == "a4":
-            return 37
-        return 38
+            return 40
+        return 41

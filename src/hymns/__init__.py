@@ -29,7 +29,7 @@ class Args:
 def parse_args() -> Args:
     parser = argparse.ArgumentParser(
         description="Compile a single PDF containing all the hymns in the collection "
-        '"Hymns—For Home and Church".',
+        '"Hymns for Home and Church".',
         epilog=f"Visit {src_repo} for more information.",
     )
     parser.add_argument(
@@ -83,10 +83,10 @@ def build_pdf(language: str, paper_size: str) -> None:
         page_width * 0.9,
         page_height * 0.15,
     )
-    # left aligned due to the extra wide \x97 char which messes up center algo
     page.insert_textbox(
         title_rect,
         doc_data.title,
+        align=pymupdf.TEXT_ALIGN_CENTER,
         fontname=font,
         fontsize=doc_data.title_font_size(paper_size),
     )
