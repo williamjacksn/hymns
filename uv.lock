@@ -99,7 +99,7 @@ requires-dist = [
 dev = [
     { name = "ruff", specifier = ">=0.15.4" },
     { name = "ty", specifier = ">=0.0.9" },
-    { name = "uv-build", specifier = ">=0.10.7" },
+    { name = "uv-build", specifier = ">=0.12.0" },
 ]
 
 [[package]]
