@@ -306,7 +306,7 @@ doc_data = DocData(
             "80/04/800459b10e8611efa950eeeeac1ef0d0090f76f2/he_is_born_the_divine_christ_child.pdf",
             False,
             True,
-            offsets=dict(letter=(0.82, 0.137)),
+            offsets={"letter": (0.82, 0.137)},
         ),
         Hymn(
             1203,
@@ -340,7 +340,7 @@ doc_data = DocData(
         ),
     ],
     title="Cantiques \x96 Pour le foyer et l\x92église",
-    t_font_size=dict(a4=33, letter=34),
+    t_font_size={"a4": 33, "letter": 34},
     hymn_link_text="Scannez ce code pour accéder à ces hymnes numériquement",
     rev_text="Révision",
     lang="fra",

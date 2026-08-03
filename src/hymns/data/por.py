@@ -338,7 +338,7 @@ doc_data = DocData(
         ),
     ],
     title="Hinos \x97 Para o Lar e para a Igreja",
-    t_font_size=dict(a4=34, letter=35),
+    t_font_size={"a4": 34, "letter": 35},
     hymn_link_text="Digitalize este código para acessar esses hinos digitalmente",
     rev_text="Revisão",
     lang="por",

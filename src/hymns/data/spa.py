@@ -338,7 +338,7 @@ doc_data = DocData(
         ),
     ],
     title="Himnos \x97 Para el hogar y la Iglesia",
-    t_font_size=dict(a4=33, letter=33),
+    t_font_size={"a4": 33, "letter": 33},
     hymn_link_text="Escanee este código para acceder los himnos digitalmente",
     rev_text="Revisión",
     lang="spa",
