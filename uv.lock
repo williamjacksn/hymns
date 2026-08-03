@@ -90,7 +90,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "httpx", specifier = ">=0.28.1" },
-    { name = "pymupdf", specifier = ">=1.26.1" },
+    { name = "pymupdf", specifier = ">=1.28.0" },
     { name = "pypng", specifier = ">=0.20220715.0" },
     { name = "qrcode", specifier = ">=8.2" },
 ]
