@@ -7,9 +7,8 @@ Compile a single PDF containing all the hymns in the collection
 
 ## Using this tool
 
-You do not need to download the source code repository to use this tool. The recommended
-way to use this tool is to run it through `uv`. [Install `uv`][b] on your computer and
-then run:
+You do not need to download the source code repository to use this tool. The recommended way to use this tool is to run
+it through `uv`. [Install `uv`][b] on your computer and then run:
 
 [b]: https://docs.astral.sh/uv/getting-started/installation/
 
@@ -19,8 +18,7 @@ uvx hymns
 
 This will perform the following actions:
 
-1. Download PDF files for all hymns into a folder named `.local/cache` in the current
-   directory.
+1. Download PDF files for all hymns into a folder named `.local/cache` in the current directory.
 2. Add hymn numbers to the first page of each hymn, in the correct corner.
 3. Arrange all hymns into a single PDF file.
 4. Add blank pages if necessary to keep two-page hymns in a single spread.
@@ -31,12 +29,11 @@ The resulting PDF is designed to be printed double-sided.
 
 ## Downloaded files
 
-Any files that need to be downloaded to generate the final PDF will be saved in
-a directory named `.local/cache` inside the current directory. If files already
-exist in the cache folder, they will not be downloaded again.
+Any files that need to be downloaded to generate the final PDF will be saved in a directory named `.local/cache` inside
+the current directory. If files already exist in the cache folder, they will not be downloaded again.
 
-You can safely delete this folder and everything in it. The next time you use this tool,
-the files will be downloaded again.
+You can safely delete this folder and everything in it. The next time you use this tool, the files will be downloaded
+again.
 
 ## Alternate languages and paper sizes
 
@@ -71,8 +68,8 @@ You can generate all possible combinations of language and paper size by running
 
 ## Updating a printed copy
 
-If you already have a printed copy of a previous version, you only need to print added
-or changed pages to update your copy.
+If you already have a printed copy of a previous version, you only need to print added or changed pages to update your
+copy.
 
 ### 2024.5 &rarr; 2024.9
 
@@ -102,3 +99,8 @@ or changed pages to update your copy.
 * Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
 * Print pages 83&ndash;102 to replace pages 83&ndash;84 in your existing copy.
 * Print page 119 to insert at the end of your existing copy.
+
+### 2026.2 &rarr; 2026.7
+
+* Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
+* Print pages 99&ndash;116 to replace pages 99&ndash;102 in your existing copy.

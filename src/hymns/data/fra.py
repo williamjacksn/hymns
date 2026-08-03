@@ -251,8 +251,49 @@ doc_data = DocData(
         Hymn(
             1062,
             "ft/5o/ft5oda159t1r3yvb9ui55gjpd0do7rzwft6zq3xg/lord_accept_our_humble_fast.pdf",
+        ),
+        Hymn(
+            1063,
+            "at/sh/atshvzoqdgppxef764r0aze6s8ctzmkwbnp4sbpp/peace_peace_be_still.pdf",
             False,
-            True,
+        ),
+        Hymn(
+            1064,
+            "zo/dn/zodnhwo9xyxk2m3s21at71s5thkzj6xjkjdwxaiq/great_is_thy_faithfulness.pdf",
+        ),
+        Hymn(
+            1065,
+            "6h/od/6hod39suy5xyzvh45rwf79r6dgy0spgbrw7nucks/isaiah_said.pdf",
+        ),
+        Hymn(
+            1066,
+            "y9/oc/y9ocm9v2nmhwj2fuffwu4viahf8tl2d5tt9ux6uk/fight_the_good_fight.pdf",
+            False,
+        ),
+        Hymn(
+            1067,
+            "3n/4j/3n4jvmrsad7appaxn8m6277jdkyqaf209oz3vo2h/its_joyful_to_live_the_gospel.pdf",
+        ),
+        Hymn(
+            1068,
+            "49/um/49um16jllhtrhqxl4vafp3v6cwdo9az0l86c1d63/to_god_be_the_glory.pdf",
+        ),
+        Hymn(
+            1069,
+            "27/17/2717p27i5pe9bn25xm3dtwbp9d9xb9ucq3fzgcqu/speak_to_us_lord.pdf",
+        ),
+        Hymn(
+            1070,
+            "qn/nc/qnncjj1ug1vp6vjvfw8nz4r22y5c4yv6wmdsp5lx/the_miracle.pdf",
+        ),
+        Hymn(
+            1071,
+            "63/5m/635mvwx1uw72jjc6xuds4ukc6ub9h9ssafgawtes/what_god_calls_us_to.pdf",
+        ),
+        Hymn(
+            1072,
+            "3d/ur/3durmfmfi2t02swu92rgm49ejmee5bft8ejeqbxe/when_i_survey_the_wondrous_cross.pdf",
+            False,
         ),
         Hymn(
             1201,
