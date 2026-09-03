@@ -25,10 +25,10 @@ hymns = "hymns:main"
 
 [dependency-groups]
 dev = [
-    "ruff>=0.16.1",
+    "ruff>=0.16.5",
     "ty>=0.0.65",
     "uv-build>=0.12.1",
 ]
 
 [tool.ruff.lint]
-extend-select = ["ANN", "Q", "RSE"]
+extend-select = ["ANN", "E", "F", "FURB", "I", "PERF", "Q", "RSE", "RUF", "S", "UP"]
