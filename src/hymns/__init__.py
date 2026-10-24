@@ -146,7 +146,7 @@ def build_pdf(language: str, paper_size: str) -> None:
         if hymn.blank_before:
             final.new_page(width=page_width, height=page_height)
         for page in doc:
-            if page.number + 1 in hymn.excluded_pages:
+            if isinstance(page.number, int) and page.number + 1 in hymn.excluded_pages:
                 continue
             new_page = final.new_page(width=page_width, height=page_height)
             new_page.show_pdf_page(new_page.rect, doc, page.number)
