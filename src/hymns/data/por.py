@@ -295,6 +295,28 @@ doc_data = DocData(
             False,
         ),
         Hymn(
+            1073,
+            "25/2y/252y27q3w6yh6q1ax4mjoi9iswf34wkadifop326/be_thou_my_vision.pdf",
+            False,
+            True,
+        ),
+        Hymn(
+            1074,
+            "95/bk/95bke4nha8iz1dnzp8e3jx50ul7vth77ngxyva59/our_savior_brings_us_joy.pdf",
+        ),
+        Hymn(
+            1075,
+            "oo/ol/oool5ldjfya3dufzk8b95f8rg2cw3223jpexsc4w/jesus_is_the_strength_of_youth.pdf",
+        ),
+        Hymn(
+            1076,
+            "ex/v5/exv5wj6a85rgbw2c2jr7n78siobqttkv8ws4hmg9/how_i_love_the_house_of_god.pdf",
+        ),
+        Hymn(
+            1077, "y8/g6/y8g6oacvtb5rnyyvkbrla0400jogh0zyfkc02853/gods_armor.pdf", False
+        ),
+        Hymn(1078, "me/9d/me9dq0to5xxz3dpg965bfs4f4jd81jd6bp9lkxnk/seek_peace.pdf"),
+        Hymn(
             1201,
             "45/87/458703350cb311efaf07eeeeac1e99beb8fedf6e/hail_the_day_that_sees_him_rise.pdf",
             False,
@@ -333,9 +355,13 @@ doc_data = DocData(
         Hymn(
             1210,
             "9r/g9/9rg99vmd90b2cnepn9yedr60fqhibrxkui2b00qa/long_ago_within_a_garden.pdf",
-            False,
-            True,
         ),
+        Hymn(
+            1211,
+            "4u/w4/4uw40c0zch0obygt9c3shtvqogd4mld0cxgc9x9z/o_come_o_come_emmanuel.pdf",
+            False,
+        ),
+        Hymn(1212, "bh/l3/bhl3nnni9kkykp1uq4hdedu01a1ls9nt8rkldmu4/a_quiet_night.pdf"),
     ],
     title="Hinos para o Lar e para a Igreja",
     t_font_size={"a4": 37, "letter": 38},

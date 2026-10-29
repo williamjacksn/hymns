@@ -104,3 +104,9 @@ copy.
 
 * Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
 * Print pages 99&ndash;116 to replace pages 99&ndash;102 in your existing copy.
+
+### 2026.7 &rarr; 2026.10
+
+* Print pages 1&ndash;2 to replace pages 1&ndash;2 in your existing copy.
+* Print pages 117&dash;126 to insert after page 116 in your existing copy.
+* Print pages 141&ndash;145 to replace pages 131&ndash;133 in your existing copy.

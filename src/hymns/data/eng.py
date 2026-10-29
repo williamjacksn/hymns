@@ -295,6 +295,28 @@ doc_data = DocData(
             False,
         ),
         Hymn(
+            1073,
+            "ve/0t/ve0tny55ega9d9oohgtb2hugyf8o9darswz3sv8b/be_thou_my_vision.pdf",
+            False,
+            True,
+        ),
+        Hymn(
+            1074,
+            "nw/os/nwosos6oqxadrqvxeb2evrsh2w833gkreydt9s99/our_savior_brings_us_joy.pdf",
+        ),
+        Hymn(
+            1075,
+            "ro/aj/roaj855kbarmp3ao90la0rrawlf5xdwmitxl5dd6/jesus_is_the_strength_of_youth.pdf",
+        ),
+        Hymn(
+            1076,
+            "zy/dw/zydwugp09a33l2e7d2erhw1wv27v8rt9kery6856/how_i_love_the_house_of_god.pdf",
+        ),
+        Hymn(
+            1077, "81/kb/81kbfunwgxuvkb36u1hg3hy6ofo7s6zoi8au5o2n/gods_armor.pdf", False
+        ),
+        Hymn(1078, "78/p2/78p2uy1a7qikmn3klfkx2mhhmjeg5co2z5mo6wg8/seek_peace.pdf"),
+        Hymn(
             1201,
             "6e/9f/6e9fac3debb511eea036eeeeac1ec84f90cdba38/hail_the_day_that_sees_him_rise.pdf",
             False,
@@ -333,8 +355,12 @@ doc_data = DocData(
         Hymn(
             1210,
             "07/3j/073ji68p7vnpfat1zz8pe23x24fgrq5blsx61wi6/long_ago_within_a_garden.pdf",
-            False,
-            True,
         ),
+        Hymn(
+            1211,
+            "xh/m3/xhm3f8peq28qzl31qllpjl7lahx2rj1wf6viw0xz/o_come_o_come_emmanuel.pdf",
+            False,
+        ),
+        Hymn(1212, "to/tn/totn0w6xfk3vn1dpd8q5iv9hlr84kffxtkk3qbrb/a_quiet_night.pdf"),
     ]
 )

@@ -296,6 +296,28 @@ doc_data = DocData(
             False,
         ),
         Hymn(
+            1073,
+            "i8/ka/i8ka4w6tboi3enh02nindrwcfoxu3ch3zp4u7hr3/be_thou_my_vision.pdf",
+            False,
+            True,
+        ),
+        Hymn(
+            1074,
+            "le/4j/le4jnqrrb4zacmduoc8gopwe4edux36rx9hulvmo/our_savior_brings_us_joy.pdf",
+        ),
+        Hymn(
+            1075,
+            "f7/u0/f7u09rv1rrt2dpte5r3x2bzvin1pc0bnm0u9iswd/jesus_is_the_strength_of_youth.pdf",
+        ),
+        Hymn(
+            1076,
+            "u6/ik/u6ikb9l5sn284blaw61tyei8i7rdb8p4okrbfccq/how_i_love_the_house_of_god.pdf",
+        ),
+        Hymn(
+            1077, "8x/pf/8xpfil5tes4shdav5ssbwdc8pk5kcaqm9v6ck1c6/gods_armor.pdf", False
+        ),
+        Hymn(1078, "m7/qm/m7qm4obh4dpflld5tmop8910cz1j0z9baxikpfjg/seek_peace.pdf"),
+        Hymn(
             1201,
             "24/78/2478120a097f11efae13eeeeac1e705949a29d62/hail_the_day_that_sees_him_rise.pdf",
             False,
@@ -335,9 +357,13 @@ doc_data = DocData(
         Hymn(
             1210,
             "w5/5g/w55g1it5513ohmm6aofbrd0ug29nrxya4f7tcks1/long_ago_within_a_garden.pdf",
-            False,
-            True,
         ),
+        Hymn(
+            1211,
+            "dv/z2/dvz2hc5vntsoj3u2psc15bhotxy7rqweizxqzxjc/o_come_o_come_emmanuel.pdf",
+            False,
+        ),
+        Hymn(1212, "ph/1d/ph1dtgbttl5svttjj6rb367rte0h8wzv3nxq75zp/a_quiet_night.pdf"),
     ],
     title="Cantiques pour le foyer et l\x92église",
     t_font_size={"a4": 35, "letter": 36},
